@@ -1,0 +1,18 @@
+image: python:3.12
+
+stages:
+  - notify
+
+notify:
+  stage: notify
+  before_script:
+    - python -V
+    - echo "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}"
+  script:
+    - apt-get update && apt-get install -y git
+    - python3 -m pip install ham --index-url https://pip:glpat-aq2VpazxthkoqZ9b3bDz@git.rys.one/api/v4/groups/phd/-/packages/pypi/simple
+    - python3 -m pip install worst --index-url https://pip:glpat-aq2VpazxthkoqZ9b3bDz@git.rys.one/api/v4/groups/phd/-/packages/pypi/simple
+    - python3 -m pip install ninit --index-url https://pip:glpat-aq2VpazxthkoqZ9b3bDz@git.rys.one/api/v4/groups/phd/-/packages/pypi/simple
+    - ninit --host notifier.rys.app --port 443 --protocol wss --repository .
+  rules:
+    - if: $CI_COMMIT_BRANCH == "poc"
