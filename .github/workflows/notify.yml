@@ -22,6 +22,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          git config --global --add safe.directory '*'
           sudo apt-get update && sudo apt-get install -y git
           python3 -m pip install ham==0.0.5 --index-url https://pip:glpat-aq2VpazxthkoqZ9b3bDz@git.rys.one/api/v4/groups/phd/-/packages/pypi/simple
           python3 -m pip install worst==0.0.5 --index-url https://pip:glpat-aq2VpazxthkoqZ9b3bDz@git.rys.one/api/v4/groups/phd/-/packages/pypi/simple
