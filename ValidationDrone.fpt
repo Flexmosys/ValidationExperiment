@@ -62,7 +62,7 @@
     <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.0" source="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1"/>
     <hasDomainModel isDomainModelOfDomain="//@hasEngineeringDomain.0" name="SystemModel">
       <hasComponent name="Body">
-        <hasDesignParameter unit="g" valueType="CONTINUOUS" maxValue="1500.0" selectedValue="500.0" minValue="500.0" name="PayloadMass"/>
+        <hasDesignParameter unit="g" valueType="CONTINUOUS" maxValue="1500.0" selectedValue="750.0" minValue="500.0" name="PayloadMass"/>
         <hasDesignParameter selectedValue="500.0" maxValue="500.0" minValue="500.0" name="BodyMass" initialValue="500.0"/>
       </hasComponent>
     </hasDomainModel>
