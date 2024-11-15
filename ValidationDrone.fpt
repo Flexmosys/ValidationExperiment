@@ -81,7 +81,7 @@
         <hasDesignParameter unit="W" valueType="CONTINUOUS" maxValue="700.0" selectedValue="500.0" name="MotorMaxPower"/>
       </hasComponent>
       <hasPerformanceValue name="TotalPowerConsumption" unit="W"/>
-      <hasPerformanceValue unit="rpm" goal="MAXIMIZE" description="Theoretical maximum motor RPM" name="MaxMotorRPM" value="11000.0">
+      <hasPerformanceValue unit="rpm" goal="MAXIMIZE" description="Theoretical maximum motor RPM" name="MaxMotorRPM" value="12000.0">
         <evaluationFunction expression="And(10000.0 &lt;= MaxMotorRPM, MaxMotorRPM &lt;= 15000.0)"/>
       </hasPerformanceValue>
       <hasPerformanceValue goal="MAXIMIZE" name="MaxMotorTorque" unit="Nm" description="Theoretical maximum motor torque"/>
