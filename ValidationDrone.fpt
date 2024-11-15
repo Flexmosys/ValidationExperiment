@@ -76,7 +76,7 @@
       <hasComponent name="Motor">
         <hasDesignParameter name="MotorMaxCurrent" selectedValue="30.0" unit="A" maxValue="40.0"/>
         <hasDesignParameter unit="rpm/V" valueType="CONTINUOUS" maxValue="3000.0" selectedValue="920.0" name="MotorKv"/>
-        <hasDesignParameter unit="g" valueType="CONTINUOUS" maxValue="150.0" selectedValue="55.0" name="MotorMass"/>
+        <hasDesignParameter unit="g" valueType="CONTINUOUS" maxValue="150.0" selectedValue="50.0" name="MotorMass"/>
         <hasDesignParameter name="MotorKt" selectedValue="0.01038" unit="Nm/A" maxValue="0.00318"/>
         <hasDesignParameter unit="W" valueType="CONTINUOUS" maxValue="700.0" selectedValue="500.0" name="MotorMaxPower"/>
       </hasComponent>
