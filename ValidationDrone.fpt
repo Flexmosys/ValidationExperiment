@@ -71,7 +71,7 @@
         <hasDesignParameter unit="V" valueType="CONTINUOUS" selectedValue="7.4" maxValue="16.8" description="" minValue="6.0" name="BatteryVoltage" initialValue="6.0"/>
         <hasDesignParameter unit="mAh" valueType="CONTINUOUS" maxValue="20000.0" selectedValue="3600.0" name="BatteryCapacity"/>
         <hasDesignParameter unit="A" valueType="CONTINUOUS" maxValue="400.0" selectedValue="43.2" name="BatteryMaxCurrent"/>
-        <hasDesignParameter unit="g" valueType="CONTINUOUS" maxValue="2000.0" selectedValue="150.0" name="BatteryMass"/>
+        <hasDesignParameter unit="g" valueType="CONTINUOUS" maxValue="2000.0" selectedValue="200.0" name="BatteryMass"/>
       </hasComponent>
       <hasComponent name="Motor">
         <hasDesignParameter name="MotorMaxCurrent" selectedValue="30.0" unit="A" maxValue="40.0"/>
