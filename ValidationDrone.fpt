@@ -98,7 +98,7 @@
     </hasDomainModel>
     <hasDomainModel isDomainModelOfDomain="//@hasEngineeringDomain.2" description="" name="MechanicalModel">
       <hasComponent name="Propeller">
-        <hasDesignParameter unit="degrees" valueType="CONTINUOUS" maxValue="30.0" selectedValue="4.0" name="PropellerPitch"/>
+        <hasDesignParameter unit="degrees" valueType="CONTINUOUS" maxValue="30.0" selectedValue="4.5" name="PropellerPitch"/>
         <hasDesignParameter unit="inch" valueType="CONTINUOUS" maxValue="15.0" selectedValue="4.0" name="PropellerDiameter"/>
         <hasDesignParameter unit="g" valueType="CONTINUOUS" maxValue="20.0" selectedValue="6.3" name="PropellerMass"/>
       </hasComponent>
