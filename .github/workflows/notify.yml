@@ -13,14 +13,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with: 
+        with:
           fetch-depth: 0
 
       - name: Show Python version
         run: python -V
 
-      - name: Show API URL (simulated)
-        run: echo "${{ github.api_url }}/repos/${{ github.repository }}"
+      - name: Ensure pip cache directory exists
+        run: mkdir -p ~/.cache/pip
+
+      - name: Debug pip cache directory
+        run: python3 -m pip cache dir
 
       - name: Cache pip packages
         uses: actions/cache@v3
