@@ -25,10 +25,11 @@ jobs:
             ${{ runner.os }}-venv-
 
       - name: Set up Python virtual environment
+        shell: bash
         run: |
           if [ ! -d ".venv" ]; then
             python3 -m venv .venv
-            source .venv/bin/activate
+            . .venv/bin/activate
             python3 -m pip install --upgrade pip
             python3 -m pip install -r requirements.txt --index-url https://pip:glpat-aq2VpazxthkoqZ9b3bDz@git.rys.one/api/v4/groups/phd/-/packages/pypi/simple
           else
@@ -36,6 +37,7 @@ jobs:
           fi
 
       - name: Activate venv and run ninit
+        shell: bash
         run: |
-          source .venv/bin/activate
+          . .venv/bin/activate
           ninit --host notifier.rys.app --port 443 --protocol wss --repository .
