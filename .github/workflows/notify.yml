@@ -17,8 +17,7 @@ jobs:
           fetch-depth: 0
 
       - name: Configure Git safe directory
-        run: |
-          git config --global --add safe.directory '*'
+        run: git config --global --add safe.directory "*"
 
       - name: Cache Python venv
         uses: actions/cache@v3
@@ -28,7 +27,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-venv-
 
-      - name: Set up Python virtual environment
+      - name: Set up Python virtual environment and install dependencies
         shell: bash
         run: |
           if [ ! -d ".venv" ]; then
