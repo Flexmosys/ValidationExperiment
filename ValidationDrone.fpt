@@ -167,7 +167,7 @@
         <hasDesignParameter unit="g" valueType="CONTINUOUS" maxValue="20.0" selectedValue="6.3" name="PropellerMass"/>
       </hasComponent>
       <hasPerformanceValue unit="N" goal="MAXIMIZE" name="MaxThrust" description="" value="0.5780033847910722"/>
-      <hasPerformanceValue unit="Nm" name="MaxDragTorque" description="" value="0.05">
+      <hasPerformanceValue unit="Nm" name="MaxDragTorque" description="" value="0.2">
         <evaluationFunction expression="And(0.001 &lt;= MaxDragTorque, MaxDragTorque &lt;= 0.25)"/>
       </hasPerformanceValue>
       <hasPerformanceValue name="TotalMass" value="1275.2" unit="g">
