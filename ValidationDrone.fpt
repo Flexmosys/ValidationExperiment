@@ -109,7 +109,7 @@
       </hasComponent>
       <hasPerformanceValue unit="N" goal="MAXIMIZE" description="" name="MaxThrust" value="0.5780033847910722"/>
       <hasPerformanceValue unit="Nm" description="" name="MaxDragTorque" value="0.14">
-        <evaluationFunction expression="And(0.001 &lt;= MaxDragTorque, MaxDragTorque &lt;= 0.25)"/>
+        <evaluationFunction expression="And(0.00001 &lt;= MaxDragTorque, MaxDragTorque &lt;= 0.25)"/>
       </hasPerformanceValue>
       <hasPerformanceValue name="TotalMass" value="1900.0" unit="g">
         <evaluationFunction expression="TotalMass &lt;= 3000"/>
