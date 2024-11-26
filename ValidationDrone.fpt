@@ -110,18 +110,18 @@
     </hasDomainModel>
     <hasDomainModel description="" name="MechanicalModel" isDomainModelOfDomain="//@hasEngineeringDomain.2">
       <hasComponent name="Propeller">
-        <hasDesignParameter valueType="CONTINUOUS" maxValue="30.0" selectedValue="4.5" description="selected" name="PropellerPitch" unit="degrees"/>
-        <hasDesignParameter valueType="CONTINUOUS" maxValue="15.0" selectedValue="6.0" description="selected" name="PropellerDiameter" unit="inch"/>
-        <hasDesignParameter valueType="CONTINUOUS" maxValue="20.0" selectedValue="4.5" description="selected" name="PropellerMass" unit="g"/>
+        <hasDesignParameter valueType="CONTINUOUS" maxValue="30.0" selectedValue="6.0" description="selected" name="PropellerPitch" unit="degrees"/>
+        <hasDesignParameter valueType="CONTINUOUS" maxValue="15.0" selectedValue="7.0" description="selected" name="PropellerDiameter" unit="inch"/>
+        <hasDesignParameter valueType="CONTINUOUS" maxValue="20.0" selectedValue="7.0" description="selected" name="PropellerMass" unit="g"/>
       </hasComponent>
-      <hasPerformanceValue goal="MAXIMIZE" description="" name="MaxThrust" value="4.259329231947453" unit="N"/>
-      <hasPerformanceValue description="" name="MaxDragTorque" value="0.007584314105549346" unit="Nm">
+      <hasPerformanceValue goal="MAXIMIZE" description="" name="MaxThrust" value="9.581246402346258" unit="N"/>
+      <hasPerformanceValue description="" name="MaxDragTorque" value="0.020907479623732753" unit="Nm">
         <evaluationFunction expression="And(0.00001 &lt;= MaxDragTorque, MaxDragTorque &lt;= 0.25)"/>
       </hasPerformanceValue>
-      <hasPerformanceValue name="TotalMass" value="1268.0" unit="g">
+      <hasPerformanceValue name="TotalMass" value="1282.0" unit="g">
         <evaluationFunction expression="TotalMass &lt;= 3000"/>
       </hasPerformanceValue>
-      <hasPerformanceValue goal="MAXIMIZE" name="ThrustToWeightRatio" value="0.3424151329477303">
+      <hasPerformanceValue goal="MAXIMIZE" name="ThrustToWeightRatio" value="0.7618421142380946">
         <evaluationFunction expression="ThrustToWeightRatio &gt;= 2"/>
       </hasPerformanceValue>
     </hasDomainModel>
@@ -184,11 +184,11 @@
     <hasRequires destination="//@hasPropertyOntology/@hasProperty.14" source="//@hasPropertyOntology/@hasProperty.7"/>
     <hasProperty state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.0" name="ValidSystem"/>
     <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3" name="SteadyStateErrorOK"/>
-    <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.0" name="CarryEnoughPayload"/>
+    <hasProperty state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.0" name="CarryEnoughPayload"/>
     <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.0" name="MinimumFlightTime"/>
     <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3" name="LimitedAcceleration"/>
     <hasProperty state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.0" name="TakeOffTimeOK"/>
-    <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.2" name="GoodThrustToWeightRatio"/>
+    <hasProperty state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.2" name="GoodThrustToWeightRatio"/>
     <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.1" name="BatterySoC10Percent"/>
     <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.1 //@hasEngineeringDomain.2" name="EnoughThrust"/>
     <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.2" name="LimitedMass"/>
