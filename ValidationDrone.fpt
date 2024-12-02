@@ -4,7 +4,7 @@
     <hasDomainModel isDomainModelOfDomain="//@hasEngineeringDomain.0" name="SystemModel">
       <hasComponent name="Body">
         <hasDesignParameter name="PayloadMass" unit="g" description="" valueType="CONTINUOUS" maxValue="500.0"/>
-        <hasDesignParameter name="BodyMass" description="" minValue="300.0" maxValue="300.0" initialValue="300.0"/>
+        <hasDesignParameter name="BodyMass" description="" minValue="300.0" maxValue="300.0" initialValue="300.0" selectedValue="300.0"/>
       </hasComponent>
     </hasDomainModel>
     <hasDomainModel description="" isDomainModelOfDomain="//@hasEngineeringDomain.1" name="ElectricalModel">
