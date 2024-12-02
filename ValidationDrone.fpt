@@ -48,7 +48,7 @@
         <evaluationFunction expression="And(0.00001 &lt;= MaxDragTorque, MaxDragTorque &lt;= 0.25)"/>
       </hasPerformanceValue>
       <hasPerformanceValue name="DroneMass" unit="g">
-        <evaluationFunction expression="TotalMass &lt;= 1500"/>
+        <evaluationFunction expression="DroneMass &lt;= 1500"/>
       </hasPerformanceValue>
       <hasPerformanceValue name="ThrustToWeightRatio" goal="MAXIMIZE">
         <evaluationFunction expression="ThrustToWeightRatio >= 2"/>
