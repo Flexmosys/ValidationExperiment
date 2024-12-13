@@ -1,6 +1,84 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<FPT:DesignProblem xmlns:xmi="http://www.omg.org/XMI" xmlns:FPT="http://www.example.org/FPT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" author="" project="FlexMoSys" modelVersion="v1" name="Validation Drone CDKM" description="This is the CDKM created for the validation of the CDKM on a drone. The goal of the drone is to hover at a certain height." xmi:version="2.0">
+<FPT:DesignProblem xmlns:xmi="http://www.omg.org/XMI" xmlns:FPT="http://www.example.org/FPT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Validation Drone CDKM" modelVersion="v1" project="FlexMoSys" description="This is the CDKM created for the validation of the CDKM on a drone. The goal of the drone is to hover at a certain height." author="" xmi:version="2.0">
   <hasDependencyModel>
+    <hasDomainModel name="SystemModel" isDomainModelOfDomain="//@hasEngineeringDomain.0">
+      <hasComponent name="Body">
+        <hasDesignParameter valueType="CONTINUOUS" unit="g" maxValue="500.0" description="" name="PayloadMass"/>
+        <hasDesignParameter selectedValue="300.0" maxValue="300.0" minValue="300.0" description="" initialValue="300.0" name="BodyMass"/>
+      </hasComponent>
+    </hasDomainModel>
+    <hasDomainModel isDomainModelOfDomain="//@hasEngineeringDomain.1" description="" name="ElectricalModel">
+      <hasComponent name="Battery">
+        <hasDesignParameter valueType="CONTINUOUS" unit="V" maxValue="16.8" selectedValue="14.8" minValue="6.0" description="selected" initialValue="6.0" name="BatteryVoltage"/>
+        <hasDesignParameter valueType="CONTINUOUS" unit="mAh" selectedValue="10000.0" maxValue="20000.0" description="selected" name="BatteryCapacity"/>
+        <hasDesignParameter valueType="CONTINUOUS" unit="A" selectedValue="120.0" maxValue="400.0" description="selected" name="BatteryMaxCurrent"/>
+        <hasDesignParameter valueType="CONTINUOUS" unit="g" selectedValue="902.0" maxValue="2000.0" description="selected" name="BatteryMass"/>
+      </hasComponent>
+      <hasComponent name="Motor">
+        <hasDesignParameter unit="A" selectedValue="33.0" maxValue="40.0" description="selected" name="MotorMaxCurrent"/>
+        <hasDesignParameter valueType="CONTINUOUS" unit="rpm/V" selectedValue="800.0" maxValue="3000.0" description="selected" name="MotorKv"/>
+        <hasDesignParameter valueType="CONTINUOUS" unit="g" selectedValue="64.0" maxValue="150.0" description="selected" name="MotorMass"/>
+        <hasDesignParameter unit="Nm/A" selectedValue="0.01194" maxValue="0.00318" description="selected" name="MotorKt"/>
+        <hasDesignParameter valueType="CONTINUOUS" unit="W" selectedValue="262.0" maxValue="700.0" description="selected" name="MotorMaxPower"/>
+      </hasComponent>
+      <hasPerformanceValue name="TotalPowerConsumption" unit="W"/>
+      <hasPerformanceValue value="11839.575455354081" unit="rpm" description="Theoretical maximum motor RPM" goal="MAXIMIZE" name="MaxMotorRPM">
+        <evaluationFunction expression="And(10000.0 &lt;= MaxMotorRPM, MaxMotorRPM &lt;= 15000.0)"/>
+      </hasPerformanceValue>
+      <hasPerformanceValue value="0.18061087559312863" unit="Nm" description="Theoretical maximum motor torque" goal="MAXIMIZE" name="MaxMotorTorque"/>
+      <hasPerformanceValue goal="MAXIMIZE" name="TorqueRatio" value="0.9999976950066362">
+        <evaluationFunction expression="TorqueRatio &gt;= 0.99"/>
+      </hasPerformanceValue>
+      <hasPerformanceValue value="70.50793558745818" unit="%" description="The expected SoC from the battery. This is obtained after giving a throttle of 50% for the duration of the test." goal="MAXIMIZE" name="ExpectedFinalSoC">
+        <evaluationFunction expression="ExpectedFinalSoC &gt; 10.0"/>
+      </hasPerformanceValue>
+      <hasPerformanceValue goal="MAXIMIZE" name="MaxMotorCurrentIn" unit="A"/>
+      <hasPerformanceValue name="FinalBatterySoC" unit="%">
+        <evaluationFunction expression="FinalBatterySoC &gt;= 10"/>
+      </hasPerformanceValue>
+    </hasDomainModel>
+    <hasDomainModel isDomainModelOfDomain="//@hasEngineeringDomain.2" description="" name="MechanicalModel">
+      <hasComponent name="Propeller">
+        <hasDesignParameter valueType="CONTINUOUS" unit="degrees" selectedValue="5.5" maxValue="30.0" description="selected" name="PropellerPitch"/>
+        <hasDesignParameter valueType="CONTINUOUS" unit="inch" maxValue="15.0" selectedValue="11.0" minValue="1e-05" description="selected" name="PropellerDiameter"/>
+        <hasDesignParameter valueType="CONTINUOUS" unit="g" selectedValue="8.2" maxValue="20.0" description="selected" name="PropellerMass"/>
+      </hasComponent>
+      <hasPerformanceValue value="53.47230708654123" unit="N" description="" goal="MAXIMIZE" name="MaxThrust"/>
+      <hasPerformanceValue value="0.1806112919009579" unit="Nm" description="" name="MaxDragTorque">
+        <evaluationFunction expression="And(0.00001 &lt;= MaxDragTorque, MaxDragTorque &lt;= 0.25)"/>
+      </hasPerformanceValue>
+      <hasPerformanceValue name="DroneMass" value="1490.8" unit="g">
+        <evaluationFunction expression="DroneMass &lt;= 1500"/>
+      </hasPerformanceValue>
+      <hasPerformanceValue goal="MAXIMIZE" name="ThrustToWeightRatio" value="2.737992681039265">
+        <evaluationFunction expression="ThrustToWeightRatio &gt;= 2"/>
+      </hasPerformanceValue>
+    </hasDomainModel>
+    <hasDomainModel name="ControlModel" isDomainModelOfDomain="//@hasEngineeringDomain.3">
+      <hasPerformanceValue name="RiseTime" value="8.43" unit="s">
+        <evaluationFunction expression="RiseTime &lt; 20"/>
+      </hasPerformanceValue>
+      <hasPerformanceValue goal="MAXIMIZE" name="Damping" unit="%"/>
+      <hasPerformanceValue name="SettlingTime" value="11.63" unit="s">
+        <evaluationFunction expression="SettlingTime &lt;= 20"/>
+      </hasPerformanceValue>
+      <hasPerformanceValue name="MaxOvershoot" value="-0.002097911156042187" unit="m">
+        <evaluationFunction expression="MaxOvershoot &lt;= 2"/>
+      </hasPerformanceValue>
+      <hasPerformanceValue name="SteadyStateError" value="0.002097911156042187" unit="m">
+        <evaluationFunction expression="And(-0.5 &lt;= SteadyStateError, SteadyStateError &lt;= 0.5)"/>
+      </hasPerformanceValue>
+      <hasPerformanceValue name="MaxExperiencedAcceleration" value="1.949492954041519" unit="m/s^2">
+        <evaluationFunction expression="And(-2.0 &lt;= MaxExperiencedAcceleration, MaxExperiencedAcceleration &lt;= 2.0)"/>
+      </hasPerformanceValue>
+      <hasComponent name="Controller">
+        <hasDesignParameter valueType="CONTINUOUS" stepSize="0.001" maxValue="10000.0" selectedValue="670.0" minValue="0.001" description="selected" initialValue="0.001" name="Kd"/>
+        <hasDesignParameter valueType="CONTINUOUS" stepSize="0.001" maxValue="10000.0" selectedValue="800.0" minValue="0.001" description="selected" initialValue="0.001" name="Kp"/>
+        <hasDesignParameter valueType="CONTINUOUS" stepSize="0.001" maxValue="10000.0" selectedValue="150.0" minValue="0.001" description="selected" initialValue="0.001" name="Ki"/>
+        <hasDesignParameter selectedValue="10000.0" name="UpperLimit" description="selected"/>
+        <hasDesignParameter selectedValue="6000.0" name="LowerLimit" description="selected"/>
+      </hasComponent>
+    </hasDomainModel>
     <hasInfluenceRelation xsi:type="FPT:L1_Signed" sign="Positive" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.1/@hasDesignParameter.1"/>
     <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.1"/>
     <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.2"/>
@@ -60,84 +138,6 @@
     <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.6" source="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.0"/>
     <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.0" source="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1"/>
     <hasInfluenceRelation xsi:type="FPT:L1_Signed" sign="Positive" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.3" source="//@hasDependencyModel/@hasDomainModel.0/@hasComponent.0/@hasDesignParameter.0"/>
-    <hasDomainModel isDomainModelOfDomain="//@hasEngineeringDomain.0" name="SystemModel">
-      <hasComponent name="Body">
-        <hasDesignParameter unit="g" valueType="CONTINUOUS" maxValue="500.0" description="" name="PayloadMass"/>
-        <hasDesignParameter initialValue="300.0" maxValue="300.0" selectedValue="300.0" minValue="300.0" description="" name="BodyMass"/>
-      </hasComponent>
-    </hasDomainModel>
-    <hasDomainModel name="ElectricalModel" description="" isDomainModelOfDomain="//@hasEngineeringDomain.1">
-      <hasComponent name="Battery">
-        <hasDesignParameter initialValue="6.0" unit="V" valueType="CONTINUOUS" maxValue="16.8" selectedValue="14.8" minValue="6.0" description="selected" name="BatteryVoltage"/>
-        <hasDesignParameter unit="mAh" valueType="CONTINUOUS" selectedValue="10000.0" maxValue="20000.0" description="selected" name="BatteryCapacity"/>
-        <hasDesignParameter unit="A" valueType="CONTINUOUS" selectedValue="120.0" maxValue="400.0" description="selected" name="BatteryMaxCurrent"/>
-        <hasDesignParameter unit="g" valueType="CONTINUOUS" selectedValue="902.0" maxValue="2000.0" description="selected" name="BatteryMass"/>
-      </hasComponent>
-      <hasComponent name="Motor">
-        <hasDesignParameter unit="A" selectedValue="33.0" maxValue="40.0" description="selected" name="MotorMaxCurrent"/>
-        <hasDesignParameter unit="rpm/V" valueType="CONTINUOUS" selectedValue="800.0" maxValue="3000.0" description="selected" name="MotorKv"/>
-        <hasDesignParameter unit="g" valueType="CONTINUOUS" selectedValue="64.0" maxValue="150.0" description="selected" name="MotorMass"/>
-        <hasDesignParameter unit="Nm/A" selectedValue="0.01194" maxValue="0.00318" description="selected" name="MotorKt"/>
-        <hasDesignParameter unit="W" valueType="CONTINUOUS" selectedValue="262.0" maxValue="700.0" description="selected" name="MotorMaxPower"/>
-      </hasComponent>
-      <hasPerformanceValue unit="W" name="TotalPowerConsumption"/>
-      <hasPerformanceValue value="11839.575455354081" unit="rpm" description="Theoretical maximum motor RPM" goal="MAXIMIZE" name="MaxMotorRPM">
-        <evaluationFunction expression="And(10000.0 &lt;= MaxMotorRPM, MaxMotorRPM &lt;= 15000.0)"/>
-      </hasPerformanceValue>
-      <hasPerformanceValue value="0.18061087559312863" unit="Nm" description="Theoretical maximum motor torque" goal="MAXIMIZE" name="MaxMotorTorque"/>
-      <hasPerformanceValue goal="MAXIMIZE" name="TorqueRatio" value="0.9999976950066362">
-        <evaluationFunction expression="TorqueRatio &gt;= 0.99"/>
-      </hasPerformanceValue>
-      <hasPerformanceValue value="70.50793558745818" unit="%" description="The expected SoC from the battery. This is obtained after giving a throttle of 50% for the duration of the test." goal="MAXIMIZE" name="ExpectedFinalSoC">
-        <evaluationFunction expression="ExpectedFinalSoC &gt; 10.0"/>
-      </hasPerformanceValue>
-      <hasPerformanceValue unit="A" goal="MAXIMIZE" name="MaxMotorCurrentIn"/>
-      <hasPerformanceValue unit="%" name="FinalBatterySoC">
-        <evaluationFunction expression="FinalBatterySoC &gt;= 10"/>
-      </hasPerformanceValue>
-    </hasDomainModel>
-    <hasDomainModel name="MechanicalModel" description="" isDomainModelOfDomain="//@hasEngineeringDomain.2">
-      <hasComponent name="Propeller">
-        <hasDesignParameter unit="degrees" valueType="CONTINUOUS" selectedValue="5.5" maxValue="30.0" description="selected" name="PropellerPitch"/>
-        <hasDesignParameter unit="inch" valueType="CONTINUOUS" maxValue="15.0" selectedValue="11.0" minValue="1e-05" description="selected" name="PropellerDiameter"/>
-        <hasDesignParameter unit="g" valueType="CONTINUOUS" selectedValue="8.2" maxValue="20.0" description="selected" name="PropellerMass"/>
-      </hasComponent>
-      <hasPerformanceValue value="53.47230708654123" unit="N" description="" goal="MAXIMIZE" name="MaxThrust"/>
-      <hasPerformanceValue value="0.1806112919009579" unit="Nm" description="" name="MaxDragTorque">
-        <evaluationFunction expression="And(0.00001 &lt;= MaxDragTorque, MaxDragTorque &lt;= 0.25)"/>
-      </hasPerformanceValue>
-      <hasPerformanceValue unit="g" name="DroneMass" value="1490.8">
-        <evaluationFunction expression="DroneMass &lt;= 1500"/>
-      </hasPerformanceValue>
-      <hasPerformanceValue goal="MAXIMIZE" name="ThrustToWeightRatio" value="2.737992681039265">
-        <evaluationFunction expression="ThrustToWeightRatio &gt;= 2"/>
-      </hasPerformanceValue>
-    </hasDomainModel>
-    <hasDomainModel isDomainModelOfDomain="//@hasEngineeringDomain.3" name="ControlModel">
-      <hasPerformanceValue unit="s" name="RiseTime">
-        <evaluationFunction expression="RiseTime &lt; 20"/>
-      </hasPerformanceValue>
-      <hasPerformanceValue unit="%" goal="MAXIMIZE" name="Damping"/>
-      <hasPerformanceValue unit="s" name="SettlingTime">
-        <evaluationFunction expression="SettlingTime &lt;= 20"/>
-      </hasPerformanceValue>
-      <hasPerformanceValue unit="m" name="MaxOvershoot">
-        <evaluationFunction expression="MaxOvershoot &lt;= 2"/>
-      </hasPerformanceValue>
-      <hasPerformanceValue unit="m" name="SteadyStateError">
-        <evaluationFunction expression="And(-0.5 &lt;= SteadyStateError, SteadyStateError &lt;= 0.5)"/>
-      </hasPerformanceValue>
-      <hasPerformanceValue unit="m/s^2" name="MaxExperiencedAcceleration">
-        <evaluationFunction expression="And(-2.0 &lt;= MaxExperiencedAcceleration, MaxExperiencedAcceleration &lt;= 2.0)"/>
-      </hasPerformanceValue>
-      <hasComponent name="Controller">
-        <hasDesignParameter initialValue="0.001" valueType="CONTINUOUS" maxValue="10000.0" stepSize="0.001" minValue="0.001" description="" name="Kd"/>
-        <hasDesignParameter initialValue="0.001" valueType="CONTINUOUS" maxValue="10000.0" stepSize="0.001" minValue="0.001" description="" name="Kp"/>
-        <hasDesignParameter initialValue="0.001" valueType="CONTINUOUS" maxValue="10000.0" stepSize="0.001" minValue="0.001" description="" name="Ki"/>
-        <hasDesignParameter description="" name="UpperLimit"/>
-        <hasDesignParameter description="" name="LowerLimit"/>
-      </hasComponent>
-    </hasDomainModel>
   </hasDependencyModel>
   <hasSatisfies property="//@hasPropertyOntology/@hasProperty.12" performanceValue="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.1"/>
   <hasSatisfies property="//@hasPropertyOntology/@hasProperty.17" performanceValue="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.4"/>
@@ -152,59 +152,59 @@
   <hasSatisfies property="//@hasPropertyOntology/@hasProperty.19" performanceValue="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.2"/>
   <hasSatisfies property="//@hasPropertyOntology/@hasProperty.4" performanceValue="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.5"/>
   <hasPropertyOntology description="">
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.0" destination="//@hasPropertyOntology/@hasProperty.1"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.0" destination="//@hasPropertyOntology/@hasProperty.5"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.0" destination="//@hasPropertyOntology/@hasProperty.3"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.0" destination="//@hasPropertyOntology/@hasProperty.2"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.0" destination="//@hasPropertyOntology/@hasProperty.4"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.2" destination="//@hasPropertyOntology/@hasProperty.6"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.3" destination="//@hasPropertyOntology/@hasProperty.7"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.6" destination="//@hasPropertyOntology/@hasProperty.8"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.6" destination="//@hasPropertyOntology/@hasProperty.9"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.8" destination="//@hasPropertyOntology/@hasProperty.10"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.10" destination="//@hasPropertyOntology/@hasProperty.11"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.10" destination="//@hasPropertyOntology/@hasProperty.12"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.7" destination="//@hasPropertyOntology/@hasProperty.13"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.10" destination="//@hasPropertyOntology/@hasProperty.13"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.8" destination="//@hasPropertyOntology/@hasProperty.15"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.15" destination="//@hasPropertyOntology/@hasProperty.16"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.13" destination="//@hasPropertyOntology/@hasProperty.17"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.15" destination="//@hasPropertyOntology/@hasProperty.18"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.5" destination="//@hasPropertyOntology/@hasProperty.19"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.19" destination="//@hasPropertyOntology/@hasProperty.6"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.19" destination="//@hasPropertyOntology/@hasProperty.20"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.14" destination="//@hasPropertyOntology/@hasProperty.21"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.4" destination="//@hasPropertyOntology/@hasProperty.21"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.0" destination="//@hasPropertyOntology/@hasProperty.22"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.22" destination="//@hasPropertyOntology/@hasProperty.23"/>
-    <hasRequires source="//@hasPropertyOntology/@hasProperty.7" destination="//@hasPropertyOntology/@hasProperty.14"/>
     <hasProperty state="FALSE" name="ValidSystem" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
-    <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3" name="SteadyStateErrorOK"/>
+    <hasProperty name="SteadyStateErrorOK" isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3"/>
     <hasProperty state="FALSE" name="CarryEnoughPayload" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
-    <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.0" name="MinimumFlightTime"/>
-    <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3" name="LimitedAcceleration"/>
+    <hasProperty name="MinimumFlightTime" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
+    <hasProperty name="LimitedAcceleration" isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3"/>
     <hasProperty state="FALSE" name="TakeOffTimeOK" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
     <hasProperty state="FALSE" name="GoodThrustToWeightRatio" isPropertyOfDomain="//@hasEngineeringDomain.2"/>
-    <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.1" name="BatterySoC10Percent"/>
+    <hasProperty name="BatterySoC10Percent" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
     <hasProperty state="FALSE" name="EnoughThrust" isPropertyOfDomain="//@hasEngineeringDomain.1 //@hasEngineeringDomain.2"/>
     <hasProperty state="TRUE" name="LimitedMass" isPropertyOfDomain="//@hasEngineeringDomain.2"/>
     <hasProperty state="TRUE" name="PowerfulMotors" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
     <hasProperty state="TRUE" name="ProvideEnoughTorque" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
     <hasProperty state="TRUE" name="RotateFastEnough" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
     <hasProperty state="TRUE" name="SufficientPowerSupply" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
-    <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.1" name="LimitedPowerConsumption"/>
+    <hasProperty name="LimitedPowerConsumption" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
     <hasProperty state="FALSE" name="GoodPropellers" isPropertyOfDomain="//@hasEngineeringDomain.2"/>
     <hasProperty state="FALSE" name="LimitedDrag" isPropertyOfDomain="//@hasEngineeringDomain.2"/>
     <hasProperty state="TRUE" name="EnoughEnergy" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
     <hasProperty name="ProvideEnoughThrust"/>
     <hasProperty state="FALSE" name="SettlingTimeOK" isPropertyOfDomain="//@hasEngineeringDomain.3"/>
-    <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.3" name="RiseTimeOK"/>
-    <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.3" name="StableControl"/>
-    <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.0" name="HeightLimit"/>
-    <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.3" name="MaxOvershootOK"/>
+    <hasProperty name="RiseTimeOK" isPropertyOfDomain="//@hasEngineeringDomain.3"/>
+    <hasProperty name="StableControl" isPropertyOfDomain="//@hasEngineeringDomain.3"/>
+    <hasProperty name="HeightLimit" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
+    <hasProperty name="MaxOvershootOK" isPropertyOfDomain="//@hasEngineeringDomain.3"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.1" source="//@hasPropertyOntology/@hasProperty.0"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.5" source="//@hasPropertyOntology/@hasProperty.0"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.3" source="//@hasPropertyOntology/@hasProperty.0"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.2" source="//@hasPropertyOntology/@hasProperty.0"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.4" source="//@hasPropertyOntology/@hasProperty.0"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.6" source="//@hasPropertyOntology/@hasProperty.2"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.7" source="//@hasPropertyOntology/@hasProperty.3"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.8" source="//@hasPropertyOntology/@hasProperty.6"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.9" source="//@hasPropertyOntology/@hasProperty.6"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.10" source="//@hasPropertyOntology/@hasProperty.8"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.11" source="//@hasPropertyOntology/@hasProperty.10"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.12" source="//@hasPropertyOntology/@hasProperty.10"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.13" source="//@hasPropertyOntology/@hasProperty.7"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.13" source="//@hasPropertyOntology/@hasProperty.10"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.15" source="//@hasPropertyOntology/@hasProperty.8"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.16" source="//@hasPropertyOntology/@hasProperty.15"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.17" source="//@hasPropertyOntology/@hasProperty.13"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.18" source="//@hasPropertyOntology/@hasProperty.15"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.19" source="//@hasPropertyOntology/@hasProperty.5"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.6" source="//@hasPropertyOntology/@hasProperty.19"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.20" source="//@hasPropertyOntology/@hasProperty.19"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.21" source="//@hasPropertyOntology/@hasProperty.14"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.21" source="//@hasPropertyOntology/@hasProperty.4"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.22" source="//@hasPropertyOntology/@hasProperty.0"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.23" source="//@hasPropertyOntology/@hasProperty.22"/>
+    <hasRequires destination="//@hasPropertyOntology/@hasProperty.14" source="//@hasPropertyOntology/@hasProperty.7"/>
   </hasPropertyOntology>
-  <hasEngineeringDomain containsProperty="//@hasPropertyOntology/@hasProperty.0 //@hasPropertyOntology/@hasProperty.1 //@hasPropertyOntology/@hasProperty.2 //@hasPropertyOntology/@hasProperty.3 //@hasPropertyOntology/@hasProperty.4 //@hasPropertyOntology/@hasProperty.5 //@hasPropertyOntology/@hasProperty.22" containsDomainModel="//@hasDependencyModel/@hasDomainModel.0" domainName="SystemDomain"/>
-  <hasEngineeringDomain containsProperty="//@hasPropertyOntology/@hasProperty.7 //@hasPropertyOntology/@hasProperty.8 //@hasPropertyOntology/@hasProperty.10 //@hasPropertyOntology/@hasProperty.11 //@hasPropertyOntology/@hasProperty.12 //@hasPropertyOntology/@hasProperty.13 //@hasPropertyOntology/@hasProperty.14 //@hasPropertyOntology/@hasProperty.17" containsDomainModel="//@hasDependencyModel/@hasDomainModel.1" domainName="ElectricalDomain"/>
-  <hasEngineeringDomain containsProperty="//@hasPropertyOntology/@hasProperty.6 //@hasPropertyOntology/@hasProperty.8 //@hasPropertyOntology/@hasProperty.9 //@hasPropertyOntology/@hasProperty.15 //@hasPropertyOntology/@hasProperty.16" containsDomainModel="//@hasDependencyModel/@hasDomainModel.2" domainName="MechanicalDomain"/>
-  <hasEngineeringDomain containsProperty="//@hasPropertyOntology/@hasProperty.1 //@hasPropertyOntology/@hasProperty.4 //@hasPropertyOntology/@hasProperty.19 //@hasPropertyOntology/@hasProperty.20 //@hasPropertyOntology/@hasProperty.21 //@hasPropertyOntology/@hasProperty.23" containsDomainModel="//@hasDependencyModel/@hasDomainModel.3" domainName="ControlDomain"/>
+  <hasEngineeringDomain containsDomainModel="//@hasDependencyModel/@hasDomainModel.0" domainName="SystemDomain" containsProperty="//@hasPropertyOntology/@hasProperty.0 //@hasPropertyOntology/@hasProperty.1 //@hasPropertyOntology/@hasProperty.2 //@hasPropertyOntology/@hasProperty.3 //@hasPropertyOntology/@hasProperty.4 //@hasPropertyOntology/@hasProperty.5 //@hasPropertyOntology/@hasProperty.22"/>
+  <hasEngineeringDomain containsDomainModel="//@hasDependencyModel/@hasDomainModel.1" domainName="ElectricalDomain" containsProperty="//@hasPropertyOntology/@hasProperty.7 //@hasPropertyOntology/@hasProperty.8 //@hasPropertyOntology/@hasProperty.10 //@hasPropertyOntology/@hasProperty.11 //@hasPropertyOntology/@hasProperty.12 //@hasPropertyOntology/@hasProperty.13 //@hasPropertyOntology/@hasProperty.14 //@hasPropertyOntology/@hasProperty.17"/>
+  <hasEngineeringDomain containsDomainModel="//@hasDependencyModel/@hasDomainModel.2" domainName="MechanicalDomain" containsProperty="//@hasPropertyOntology/@hasProperty.6 //@hasPropertyOntology/@hasProperty.8 //@hasPropertyOntology/@hasProperty.9 //@hasPropertyOntology/@hasProperty.15 //@hasPropertyOntology/@hasProperty.16"/>
+  <hasEngineeringDomain containsDomainModel="//@hasDependencyModel/@hasDomainModel.3" domainName="ControlDomain" containsProperty="//@hasPropertyOntology/@hasProperty.1 //@hasPropertyOntology/@hasProperty.4 //@hasPropertyOntology/@hasProperty.19 //@hasPropertyOntology/@hasProperty.20 //@hasPropertyOntology/@hasProperty.21 //@hasPropertyOntology/@hasProperty.23"/>
 </FPT:DesignProblem>
