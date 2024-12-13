@@ -55,27 +55,27 @@
       </hasPerformanceValue>
     </hasDomainModel>
     <hasDomainModel name="ControlModel" isDomainModelOfDomain="//@hasEngineeringDomain.3">
-      <hasPerformanceValue name="RiseTime" value="8.66" unit="s">
+      <hasPerformanceValue name="RiseTime" value="8.65" unit="s">
         <evaluationFunction expression="RiseTime &lt; 20"/>
       </hasPerformanceValue>
       <hasPerformanceValue goal="MAXIMIZE" name="Damping" unit="%"/>
-      <hasPerformanceValue name="SettlingTime" value="12.290000000000001" unit="s">
+      <hasPerformanceValue name="SettlingTime" value="12.280000000000001" unit="s">
         <evaluationFunction expression="SettlingTime &lt;= 20"/>
       </hasPerformanceValue>
-      <hasPerformanceValue name="MaxOvershoot" value="-0.0027232901327884917" unit="m">
+      <hasPerformanceValue name="MaxOvershoot" value="-0.0027201900893025766" unit="m">
         <evaluationFunction expression="MaxOvershoot &lt;= 2"/>
       </hasPerformanceValue>
-      <hasPerformanceValue name="SteadyStateError" value="0.0027232901327884917" unit="m">
+      <hasPerformanceValue name="SteadyStateError" value="0.0027201900893025766" unit="m">
         <evaluationFunction expression="And(-0.5 &lt;= SteadyStateError, SteadyStateError &lt;= 0.5)"/>
       </hasPerformanceValue>
-      <hasPerformanceValue name="MaxExperiencedAcceleration" value="1.0011202123596288" unit="m/s^2">
+      <hasPerformanceValue name="MaxExperiencedAcceleration" value="1.2020213253266898" unit="m/s^2">
         <evaluationFunction expression="And(-2.0 &lt;= MaxExperiencedAcceleration, MaxExperiencedAcceleration &lt;= 2.0)"/>
       </hasPerformanceValue>
       <hasComponent name="Controller">
         <hasDesignParameter valueType="CONTINUOUS" stepSize="0.001" maxValue="10000.0" selectedValue="670.0" minValue="0.001" description="selected" initialValue="0.001" name="Kd"/>
         <hasDesignParameter valueType="CONTINUOUS" stepSize="0.001" maxValue="10000.0" selectedValue="800.0" minValue="0.001" description="selected" initialValue="0.001" name="Kp"/>
         <hasDesignParameter valueType="CONTINUOUS" stepSize="0.001" maxValue="10000.0" selectedValue="150.0" minValue="0.001" description="selected" initialValue="0.001" name="Ki"/>
-        <hasDesignParameter selectedValue="10000.0" name="UpperLimit" description="selected"/>
+        <hasDesignParameter selectedValue="9740.0" name="UpperLimit" description="selected"/>
         <hasDesignParameter selectedValue="6000.0" name="LowerLimit" description="selected"/>
       </hasComponent>
     </hasDomainModel>
@@ -152,12 +152,12 @@
   <hasSatisfies property="//@hasPropertyOntology/@hasProperty.19" performanceValue="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.2"/>
   <hasSatisfies property="//@hasPropertyOntology/@hasProperty.4" performanceValue="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.5"/>
   <hasPropertyOntology description="">
-    <hasProperty state="FALSE" name="ValidSystem" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
-    <hasProperty state="FALSE" name="SteadyStateErrorOK" isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3"/>
+    <hasProperty name="ValidSystem" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
+    <hasProperty state="TRUE" name="SteadyStateErrorOK" isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3"/>
     <hasProperty name="CarryEnoughPayload" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
     <hasProperty name="MinimumFlightTime" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
     <hasProperty name="LimitedAcceleration" isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3"/>
-    <hasProperty state="FALSE" name="TakeOffTimeOK" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
+    <hasProperty name="TakeOffTimeOK" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
     <hasProperty name="GoodThrustToWeightRatio" isPropertyOfDomain="//@hasEngineeringDomain.2"/>
     <hasProperty name="BatterySoC10Percent" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
     <hasProperty name="EnoughThrust" isPropertyOfDomain="//@hasEngineeringDomain.1 //@hasEngineeringDomain.2"/>
@@ -171,8 +171,8 @@
     <hasProperty state="TRUE" name="LimitedDrag" isPropertyOfDomain="//@hasEngineeringDomain.2"/>
     <hasProperty state="TRUE" name="EnoughEnergy" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
     <hasProperty name="ProvideEnoughThrust"/>
-    <hasProperty state="FALSE" name="SettlingTimeOK" isPropertyOfDomain="//@hasEngineeringDomain.3"/>
-    <hasProperty state="FALSE" name="RiseTimeOK" isPropertyOfDomain="//@hasEngineeringDomain.3"/>
+    <hasProperty name="SettlingTimeOK" isPropertyOfDomain="//@hasEngineeringDomain.3"/>
+    <hasProperty state="TRUE" name="RiseTimeOK" isPropertyOfDomain="//@hasEngineeringDomain.3"/>
     <hasProperty name="StableControl" isPropertyOfDomain="//@hasEngineeringDomain.3"/>
     <hasProperty state="TRUE" name="HeightLimit" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
     <hasProperty state="TRUE" name="MaxOvershootOK" isPropertyOfDomain="//@hasEngineeringDomain.3"/>
