@@ -8,21 +8,21 @@
     <hasProperty name="ValidSystem" state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
     <hasProperty name="SteadyStateErrorOK" isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3"/>
     <hasProperty name="CarryEnoughPayload" state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
-    <hasProperty name="MinimumFlightTime" state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
+    <hasProperty name="MinimumFlightTime" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
     <hasProperty name="LimitedAcceleration" isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3"/>
     <hasProperty name="TakeOffTimeOK" state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
     <hasProperty name="GoodThrustToWeightRatio" state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.2"/>
-    <hasProperty name="BatterySoC10Percent" state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
+    <hasProperty name="BatterySoC10Percent" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
     <hasProperty name="EnoughThrust" state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.1 //@hasEngineeringDomain.2"/>
     <hasProperty name="LimitedMass" isPropertyOfDomain="//@hasEngineeringDomain.2"/>
     <hasProperty name="PowerfulMotors" state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
-    <hasProperty name="ProvideEnoughTorque" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
-    <hasProperty name="RotateFastEnough" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
-    <hasProperty name="SufficientPowerSupply" state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
+    <hasProperty name="ProvideEnoughTorque" state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
+    <hasProperty name="RotateFastEnough" state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
+    <hasProperty name="SufficientPowerSupply" state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
     <hasProperty name="LimitedPowerConsumption" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
     <hasProperty name="GoodPropellers" isPropertyOfDomain="//@hasEngineeringDomain.2"/>
     <hasProperty name="LimitedDrag" isPropertyOfDomain="//@hasEngineeringDomain.2"/>
-    <hasProperty name="EnoughEnergy" state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
+    <hasProperty name="EnoughEnergy" state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
     <hasProperty name="SettlingTimeOK" state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.3"/>
     <hasProperty name="RiseTimeOK" isPropertyOfDomain="//@hasEngineeringDomain.3"/>
     <hasProperty name="StableControl" isPropertyOfDomain="//@hasEngineeringDomain.3"/>
@@ -63,27 +63,27 @@
     </hasDomainModel>
     <hasDomainModel name="ElectricalModel" isDomainModelOfDomain="//@hasEngineeringDomain.1" description="">
       <hasComponent name="Battery">
-        <hasDesignParameter description="selected" minValue="6.0" name="BatteryVoltage" initialValue="6.0" unit="V" valueType="CONTINUOUS" maxValue="16.8" selectedValue="11.1"/>
-        <hasDesignParameter description="selected" name="BatteryCapacity" unit="mAh" valueType="CONTINUOUS" maxValue="20000.0" selectedValue="3600.0"/>
-        <hasDesignParameter description="selected" name="BatteryMaxCurrent" unit="A" valueType="CONTINUOUS" maxValue="400.0" selectedValue="108.0"/>
-        <hasDesignParameter description="selected" name="BatteryMass" unit="g" valueType="CONTINUOUS" maxValue="2000.0" selectedValue="321.0"/>
+        <hasDesignParameter description="selected" minValue="6.0" name="BatteryVoltage" initialValue="6.0" unit="V" valueType="CONTINUOUS" maxValue="16.8" selectedValue="14.8"/>
+        <hasDesignParameter description="selected" name="BatteryCapacity" unit="mAh" valueType="CONTINUOUS" maxValue="20000.0" selectedValue="10000.0"/>
+        <hasDesignParameter description="selected" name="BatteryMaxCurrent" unit="A" valueType="CONTINUOUS" maxValue="400.0" selectedValue="120.0"/>
+        <hasDesignParameter description="selected" name="BatteryMass" unit="g" valueType="CONTINUOUS" maxValue="2000.0" selectedValue="902.0"/>
       </hasComponent>
       <hasComponent name="Motor">
-        <hasDesignParameter description="selected" name="MotorMaxCurrent" unit="A" maxValue="40.0" selectedValue="17.0"/>
-        <hasDesignParameter description="selected" name="MotorKv" unit="rpm/V" valueType="CONTINUOUS" maxValue="3000.0" selectedValue="920.0"/>
-        <hasDesignParameter description="selected" name="MotorMass" unit="g" valueType="CONTINUOUS" maxValue="150.0" selectedValue="55.0"/>
-        <hasDesignParameter description="selected" name="MotorKt" unit="Nm/A" maxValue="0.00318" selectedValue="0.01038"/>
-        <hasDesignParameter description="selected" name="MotorMaxPower" unit="W" valueType="CONTINUOUS" maxValue="700.0" selectedValue="177.0"/>
+        <hasDesignParameter description="selected" name="MotorMaxCurrent" unit="A" maxValue="40.0" selectedValue="33.0"/>
+        <hasDesignParameter description="selected" name="MotorKv" unit="rpm/V" valueType="CONTINUOUS" maxValue="3000.0" selectedValue="800.0"/>
+        <hasDesignParameter description="selected" name="MotorMass" unit="g" valueType="CONTINUOUS" maxValue="150.0" selectedValue="64.0"/>
+        <hasDesignParameter description="selected" name="MotorKt" unit="Nm/A" maxValue="0.00318" selectedValue="0.01194"/>
+        <hasDesignParameter description="selected" name="MotorMaxPower" unit="W" valueType="CONTINUOUS" maxValue="700.0" selectedValue="262.0"/>
       </hasComponent>
       <hasPerformanceValue name="TotalPowerConsumption" unit="W"/>
-      <hasPerformanceValue description="Theoretical maximum motor RPM" name="MaxMotorRPM" value="-0.0" unit="rpm" goal="MAXIMIZE">
+      <hasPerformanceValue description="Theoretical maximum motor RPM" name="MaxMotorRPM" value="7082.2484685285735" unit="rpm" goal="MAXIMIZE">
         <evaluationFunction expression="And(10000.0 &lt;= MaxMotorRPM, MaxMotorRPM &lt;= 15000.0)"/>
       </hasPerformanceValue>
-      <hasPerformanceValue description="Theoretical maximum motor torque" name="MaxMotorTorque" value="0.17646" unit="Nm" goal="MAXIMIZE"/>
-      <hasPerformanceValue name="TorqueRatio" value="1.7646e-07" goal="MAXIMIZE">
+      <hasPerformanceValue description="Theoretical maximum motor torque" name="MaxMotorTorque" value="0.3532657342540812" unit="Nm" goal="MAXIMIZE"/>
+      <hasPerformanceValue name="TorqueRatio" value="1.0" goal="MAXIMIZE">
         <evaluationFunction expression="TorqueRatio &gt;= 0.99"/>
       </hasPerformanceValue>
-      <hasPerformanceValue description="The expected SoC from the battery. This is obtained after giving a throttle of 50% for the duration of the test." name="ExpectedFinalSoC" value="100.0" unit="%" goal="MAXIMIZE">
+      <hasPerformanceValue description="The expected SoC from the battery. This is obtained after giving a throttle of 50% for the duration of the test." name="ExpectedFinalSoC" value="41.541019286662205" unit="%" goal="MAXIMIZE">
         <evaluationFunction expression="ExpectedFinalSoC &gt; 10.0"/>
       </hasPerformanceValue>
       <hasPerformanceValue name="MaxMotorCurrentIn" unit="A" goal="MAXIMIZE"/>
