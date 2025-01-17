@@ -16,7 +16,7 @@
     <hasProperty name="EnoughThrust" state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.1 //@hasEngineeringDomain.2"/>
     <hasProperty name="LimitedMass" isPropertyOfDomain="//@hasEngineeringDomain.2"/>
     <hasProperty name="PowerfulMotors" state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
-    <hasProperty name="ProvideEnoughTorque" state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
+    <hasProperty name="ProvideEnoughTorque" state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
     <hasProperty name="RotateFastEnough" state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
     <hasProperty name="SufficientPowerSupply" state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
     <hasProperty name="LimitedPowerConsumption" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
@@ -69,21 +69,21 @@
         <hasDesignParameter description="selected" name="BatteryMass" unit="g" valueType="CONTINUOUS" maxValue="2000.0" selectedValue="902.0"/>
       </hasComponent>
       <hasComponent name="Motor">
-        <hasDesignParameter description="selected" name="MotorMaxCurrent" unit="A" maxValue="40.0" selectedValue="33.0"/>
-        <hasDesignParameter description="selected" name="MotorKv" unit="rpm/V" valueType="CONTINUOUS" maxValue="3000.0" selectedValue="800.0"/>
-        <hasDesignParameter description="selected" name="MotorMass" unit="g" valueType="CONTINUOUS" maxValue="150.0" selectedValue="64.0"/>
-        <hasDesignParameter description="selected" name="MotorKt" unit="Nm/A" maxValue="0.00318" selectedValue="0.01194"/>
-        <hasDesignParameter description="selected" name="MotorMaxPower" unit="W" valueType="CONTINUOUS" maxValue="700.0" selectedValue="262.0"/>
+        <hasDesignParameter description="selected" name="MotorMaxCurrent" unit="A" maxValue="40.0" selectedValue="38.0"/>
+        <hasDesignParameter description="selected" name="MotorKv" unit="rpm/V" valueType="CONTINUOUS" maxValue="3000.0" selectedValue="910.0"/>
+        <hasDesignParameter description="selected" name="MotorMass" unit="g" valueType="CONTINUOUS" maxValue="150.0" selectedValue="88.0"/>
+        <hasDesignParameter description="selected" name="MotorKt" unit="Nm/A" maxValue="0.00318" selectedValue="0.01049"/>
+        <hasDesignParameter description="selected" name="MotorMaxPower" unit="W" valueType="CONTINUOUS" maxValue="700.0" selectedValue="399.0"/>
       </hasComponent>
       <hasPerformanceValue name="TotalPowerConsumption" unit="W"/>
-      <hasPerformanceValue description="Theoretical maximum motor RPM" name="MaxMotorRPM" value="7082.2484685285735" unit="rpm" goal="MAXIMIZE">
+      <hasPerformanceValue description="Theoretical maximum motor RPM" name="MaxMotorRPM" value="13467.169006960386" unit="rpm" goal="MAXIMIZE">
         <evaluationFunction expression="And(10000.0 &lt;= MaxMotorRPM, MaxMotorRPM &lt;= 15000.0)"/>
       </hasPerformanceValue>
-      <hasPerformanceValue description="Theoretical maximum motor torque" name="MaxMotorTorque" value="0.3532657342540812" unit="Nm" goal="MAXIMIZE"/>
-      <hasPerformanceValue name="TorqueRatio" value="1.0" goal="MAXIMIZE">
+      <hasPerformanceValue description="Theoretical maximum motor torque" name="MaxMotorTorque" value="0.27908250302081855" unit="Nm" goal="MAXIMIZE"/>
+      <hasPerformanceValue name="TorqueRatio" value="1.0000000000009268" goal="MAXIMIZE">
         <evaluationFunction expression="TorqueRatio &gt;= 0.99"/>
       </hasPerformanceValue>
-      <hasPerformanceValue description="The expected SoC from the battery. This is obtained after giving a throttle of 50% for the duration of the test." name="ExpectedFinalSoC" value="41.541019286662205" unit="%" goal="MAXIMIZE">
+      <hasPerformanceValue description="The expected SoC from the battery. This is obtained after giving a throttle of 50% for the duration of the test." name="ExpectedFinalSoC" value="47.606226515029256" unit="%" goal="MAXIMIZE">
         <evaluationFunction expression="ExpectedFinalSoC &gt; 10.0"/>
       </hasPerformanceValue>
       <hasPerformanceValue name="MaxMotorCurrentIn" unit="A" goal="MAXIMIZE"/>
