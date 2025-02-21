@@ -113,14 +113,14 @@
     </hasDomainModel>
     <hasDomainModel name="ElectricalModel" isDomainModelOfDomain="//@hasEngineeringDomain.1" description="">
       <hasPerformanceValue unit="W" name="TotalPowerConsumption"/>
-      <hasPerformanceValue description="Theoretical maximum motor RPM" name="MaxMotorRPM" value="11099.9474141876" unit="rpm" goal="MAXIMIZE">
+      <hasPerformanceValue description="Theoretical maximum motor RPM" name="MaxMotorRPM" value="13319.86200431904" unit="rpm" goal="MAXIMIZE">
         <evaluationFunction expression="And(10000.0 &lt;= MaxMotorRPM, MaxMotorRPM &lt;= 15000.0)"/>
       </hasPerformanceValue>
-      <hasPerformanceValue description="Theoretical maximum motor torque" name="MaxMotorTorque" value="0.038748293123920516" unit="Nm" goal="MAXIMIZE"/>
-      <hasPerformanceValue value="0.9999576215500114" goal="MAXIMIZE" name="TorqueRatio">
+      <hasPerformanceValue description="Theoretical maximum motor torque" name="MaxMotorTorque" value="0.038750407592022966" unit="Nm" goal="MAXIMIZE"/>
+      <hasPerformanceValue value="1.0000121885599134" goal="MAXIMIZE" name="TorqueRatio">
         <evaluationFunction expression="TorqueRatio &gt;= 0.99"/>
       </hasPerformanceValue>
-      <hasPerformanceValue description="The expected SoC from the battery. This is obtained after giving a throttle of 50% for the duration of the test." name="ExpectedFinalSoC" value="64.10956731031564" unit="%" goal="MAXIMIZE">
+      <hasPerformanceValue description="The expected SoC from the battery. This is obtained after giving a throttle of 50% for the duration of the test." name="ExpectedFinalSoC" value="60.431313934201064" unit="%" goal="MAXIMIZE">
         <evaluationFunction expression="ExpectedFinalSoC &gt; 10.0"/>
       </hasPerformanceValue>
       <hasPerformanceValue unit="A" goal="MAXIMIZE" name="MaxMotorCurrentIn"/>
@@ -128,17 +128,17 @@
         <evaluationFunction expression="FinalBatterySoC &gt;= 10"/>
       </hasPerformanceValue>
       <hasComponent name="Battery">
-        <hasDesignParameter description="selected" minValue="6.0" name="BatteryVoltage" initialValue="6.0" unit="V" valueType="CONTINUOUS" selectedValue="11.1" maxValue="16.8"/>
-        <hasDesignParameter description="selected" name="BatteryCapacity" unit="mAh" valueType="CONTINUOUS" selectedValue="2200.0" maxValue="20000.0"/>
-        <hasDesignParameter description="selected" name="BatteryMaxCurrent" unit="A" valueType="CONTINUOUS" selectedValue="55.0" maxValue="400.0"/>
-        <hasDesignParameter description="selected" name="BatteryMass" unit="g" valueType="CONTINUOUS" selectedValue="178.0" maxValue="2000.0"/>
+        <hasDesignParameter description="selected" minValue="6.0" name="BatteryVoltage" initialValue="6.0" unit="V" valueType="CONTINUOUS" selectedValue="7.4" maxValue="16.8"/>
+        <hasDesignParameter description="selected" name="BatteryCapacity" unit="mAh" valueType="CONTINUOUS" selectedValue="3600.0" maxValue="20000.0"/>
+        <hasDesignParameter description="selected" name="BatteryMaxCurrent" unit="A" valueType="CONTINUOUS" selectedValue="43.2" maxValue="400.0"/>
+        <hasDesignParameter description="selected" name="BatteryMass" unit="g" valueType="CONTINUOUS" selectedValue="173.0" maxValue="2000.0"/>
       </hasComponent>
       <hasComponent name="Motor">
-        <hasDesignParameter description="selected" name="MotorMaxCurrent" unit="A" selectedValue="30.0" maxValue="40.0"/>
-        <hasDesignParameter description="selected" name="MotorKv" unit="rpm/V" valueType="CONTINUOUS" selectedValue="1000.0" maxValue="3000.0"/>
-        <hasDesignParameter description="selected" name="MotorMass" unit="g" valueType="CONTINUOUS" selectedValue="81.0" maxValue="150.0"/>
-        <hasDesignParameter description="selected" name="MotorKt" unit="Nm/A" selectedValue="0.00955" maxValue="0.00318"/>
-        <hasDesignParameter description="selected" name="MotorMaxPower" unit="W" valueType="CONTINUOUS" selectedValue="287.0" maxValue="700.0"/>
+        <hasDesignParameter description="selected" name="MotorMaxCurrent" unit="A" selectedValue="26.0" maxValue="40.0"/>
+        <hasDesignParameter description="selected" name="MotorKv" unit="rpm/V" valueType="CONTINUOUS" selectedValue="1800.0" maxValue="3000.0"/>
+        <hasDesignParameter description="selected" name="MotorMass" unit="g" valueType="CONTINUOUS" selectedValue="82.0" maxValue="150.0"/>
+        <hasDesignParameter description="selected" name="MotorKt" unit="Nm/A" selectedValue="0.00531" maxValue="0.00318"/>
+        <hasDesignParameter description="selected" name="MotorMaxPower" unit="W" valueType="CONTINUOUS" selectedValue="138.0" maxValue="700.0"/>
       </hasComponent>
     </hasDomainModel>
     <hasDomainModel name="MechanicalModel" isDomainModelOfDomain="//@hasEngineeringDomain.2" description="">
