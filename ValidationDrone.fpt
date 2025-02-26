@@ -104,7 +104,7 @@
       <hasPerformanceValue value="1034.2" unit="g" name="DroneMass">
         <evaluationFunction expression="DroneMass &lt;= 1500"/>
       </hasPerformanceValue>
-      <hasPerformanceValue value="4.008538971655437" goal="MAXIMIZE" name="ThrustToWeightRatio">
+      <hasPerformanceValue value="2.7021450948286097" goal="MAXIMIZE" name="ThrustToWeightRatio">
         <evaluationFunction expression="ThrustToWeightRatio &gt;= 2"/>
       </hasPerformanceValue>
       <hasComponent name="Propeller">
