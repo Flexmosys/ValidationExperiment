@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <FPT:DesignProblem xmlns:xmi="http://www.omg.org/XMI" xmlns:FPT="http://www.example.org/FPT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" author="" name="Validation Drone CDKM" modelVersion="v1" project="FlexMoSys" description="This is the CDKM created for the validation of the CDKM on a drone. The goal of the drone is to hover at a certain height." xmi:version="2.0">
   <hasPropertyOntology description="">
-    <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.0" name="ValidSystem"/>
+    <hasProperty state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.0" name="ValidSystem"/>
     <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3" name="SteadyStateErrorOK"/>
-    <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.0" name="CarryEnoughPayload"/>
+    <hasProperty state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.0" name="CarryEnoughPayload"/>
     <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.0" name="MinimumFlightTime"/>
     <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3" name="LimitedAcceleration"/>
-    <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.0" name="TakeOffTimeOK"/>
-    <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.2" name="GoodThrustToWeightRatio"/>
+    <hasProperty state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.0" name="TakeOffTimeOK"/>
+    <hasProperty state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.2" name="GoodThrustToWeightRatio"/>
     <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.1" name="BatterySoC10Percent"/>
     <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.1 //@hasEngineeringDomain.2" name="EnoughThrust"/>
     <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.2" name="LimitedMass"/>
@@ -18,7 +18,7 @@
     <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.2" name="GoodPropellers"/>
     <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.2" name="LimitedDrag"/>
     <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.1" name="EnoughEnergy"/>
-    <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.3" name="SettlingTimeOK"/>
+    <hasProperty state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.3" name="SettlingTimeOK"/>
     <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.3" name="RiseTimeOK"/>
     <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.0" name="HeightLimit"/>
     <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.3" name="MaxOvershootOK"/>
@@ -159,18 +159,18 @@
     </hasDomainModel>
     <hasDomainModel isDomainModelOfDomain="//@hasEngineeringDomain.2" description="" name="MechanicalModel">
       <hasComponent name="Propeller">
-        <hasDesignParameter name="PropellerPitch" selectedValue="4.5" unit="degrees" valueType="CONTINUOUS" maxValue="30.0" description="selected"/>
-        <hasDesignParameter name="PropellerDiameter" minValue="1e-05" unit="inch" valueType="CONTINUOUS" selectedValue="4.0" description="selected" maxValue="15.0"/>
-        <hasDesignParameter name="PropellerMass" selectedValue="6.3" unit="g" valueType="CONTINUOUS" maxValue="20.0" description="selected"/>
+        <hasDesignParameter name="PropellerPitch" selectedValue="6.0" unit="degrees" valueType="CONTINUOUS" maxValue="30.0" description="selected"/>
+        <hasDesignParameter name="PropellerDiameter" minValue="1e-05" unit="inch" valueType="CONTINUOUS" selectedValue="7.0" description="selected" maxValue="15.0"/>
+        <hasDesignParameter name="PropellerMass" selectedValue="7.0" unit="g" valueType="CONTINUOUS" maxValue="20.0" description="selected"/>
       </hasComponent>
-      <hasPerformanceValue name="MaxThrust" value="1.0411330375277348" unit="N" goal="MAXIMIZE" description=""/>
-      <hasPerformanceValue name="MaxDragTorque" value="0.0012109743535423042" unit="Nm" description="">
+      <hasPerformanceValue name="MaxThrust" value="11.853608617008899" unit="N" goal="MAXIMIZE" description=""/>
+      <hasPerformanceValue name="MaxDragTorque" value="0.025466091194044" unit="Nm" description="">
         <evaluationFunction expression="And(0.00001 &lt;= MaxDragTorque, MaxDragTorque &lt;= 0.25)"/>
       </hasPerformanceValue>
-      <hasPerformanceValue name="DroneMass" value="1008.2" unit="g">
+      <hasPerformanceValue name="DroneMass" value="1011.0" unit="g">
         <evaluationFunction expression="DroneMass &lt;= 1500"/>
       </hasPerformanceValue>
-      <hasPerformanceValue name="ThrustToWeightRatio" value="0.10526658338704527" goal="MAXIMIZE">
+      <hasPerformanceValue name="ThrustToWeightRatio" value="1.1951720288860153" goal="MAXIMIZE">
         <evaluationFunction expression="ThrustToWeightRatio &gt;= 2"/>
       </hasPerformanceValue>
     </hasDomainModel>
