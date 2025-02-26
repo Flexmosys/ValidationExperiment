@@ -147,18 +147,18 @@
     </hasDomainModel>
     <hasDomainModel isDomainModelOfDomain="//@hasEngineeringDomain.2" description="" name="MechanicalModel">
       <hasComponent name="Propeller">
-        <hasDesignParameter valueType="CONTINUOUS" maxValue="30.0" selectedValue="8.5" description="selected" name="PropellerPitch" unit="degrees"/>
-        <hasDesignParameter valueType="CONTINUOUS" maxValue="15.0" selectedValue="14.0" description="selected" minValue="1e-05" name="PropellerDiameter" unit="inch"/>
-        <hasDesignParameter valueType="CONTINUOUS" maxValue="20.0" selectedValue="16.0" description="selected" name="PropellerMass" unit="g"/>
+        <hasDesignParameter valueType="CONTINUOUS" maxValue="30.0" selectedValue="4.5" description="selected" name="PropellerPitch" unit="degrees"/>
+        <hasDesignParameter valueType="CONTINUOUS" maxValue="15.0" selectedValue="13.0" description="selected" minValue="1e-05" name="PropellerDiameter" unit="inch"/>
+        <hasDesignParameter valueType="CONTINUOUS" maxValue="20.0" selectedValue="14.2" description="selected" name="PropellerMass" unit="g"/>
       </hasComponent>
-      <hasPerformanceValue goal="MAXIMIZE" description="" name="MaxThrust" value="247.41397956366973" unit="N"/>
-      <hasPerformanceValue description="" name="MaxDragTorque" value="1.1745810016261613" unit="Nm">
+      <hasPerformanceValue goal="MAXIMIZE" description="" name="MaxThrust" value="116.15547142511576" unit="N"/>
+      <hasPerformanceValue description="" name="MaxDragTorque" value="0.4390881842283034" unit="Nm">
         <evaluationFunction expression="And(0.00001 &lt;= MaxDragTorque, MaxDragTorque &lt;= 0.25)"/>
       </hasPerformanceValue>
-      <hasPerformanceValue name="DroneMass" value="1047.0" unit="g">
+      <hasPerformanceValue name="DroneMass" value="1039.8" unit="g">
         <evaluationFunction expression="DroneMass &lt;= 1500"/>
       </hasPerformanceValue>
-      <hasPerformanceValue goal="MAXIMIZE" name="ThrustToWeightRatio" value="24.08843280823417">
+      <hasPerformanceValue goal="MAXIMIZE" name="ThrustToWeightRatio" value="11.387302332028854">
         <evaluationFunction expression="ThrustToWeightRatio &gt;= 2"/>
       </hasPerformanceValue>
     </hasDomainModel>
