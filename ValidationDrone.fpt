@@ -158,20 +158,20 @@
       </hasComponent>
     </hasDomainModel>
     <hasDomainModel name="MechanicalModel" description="" isDomainModelOfDomain="//@hasEngineeringDomain.2">
-      <hasPerformanceValue description="" unit="N" goal="MAXIMIZE" name="MaxThrust" value="152.63733094426692"/>
-      <hasPerformanceValue description="" unit="Nm" name="MaxDragTorque" value="0.7423615411150384">
+      <hasPerformanceValue description="" unit="N" goal="MAXIMIZE" name="MaxThrust" value="6.705921219782047"/>
+      <hasPerformanceValue description="" unit="Nm" name="MaxDragTorque" value="0.015314070475644044">
         <evaluationFunction expression="And(0.00001 &lt;= MaxDragTorque, MaxDragTorque &lt;= 0.25)"/>
       </hasPerformanceValue>
-      <hasPerformanceValue name="DroneMass" unit="g" value="1251.0">
+      <hasPerformanceValue name="DroneMass" unit="g" value="1235.0">
         <evaluationFunction expression="DroneMass &lt;= 1500"/>
       </hasPerformanceValue>
-      <hasPerformanceValue goal="MAXIMIZE" name="ThrustToWeightRatio" value="12.437538731034902">
+      <hasPerformanceValue goal="MAXIMIZE" name="ThrustToWeightRatio" value="0.5535061900631881">
         <evaluationFunction expression="ThrustToWeightRatio &gt;= 2"/>
       </hasPerformanceValue>
       <hasComponent name="Propeller">
-        <hasDesignParameter maxValue="30.0" selectedValue="8.5" description="selected" unit="degrees" name="PropellerPitch" valueType="CONTINUOUS"/>
-        <hasDesignParameter maxValue="15.0" selectedValue="14.0" description="selected" unit="inch" minValue="1e-05" name="PropellerDiameter" valueType="CONTINUOUS"/>
-        <hasDesignParameter maxValue="20.0" selectedValue="16.0" description="selected" unit="g" name="PropellerMass" valueType="CONTINUOUS"/>
+        <hasDesignParameter maxValue="30.0" selectedValue="2.8" description="selected" unit="degrees" name="PropellerPitch" valueType="CONTINUOUS"/>
+        <hasDesignParameter maxValue="15.0" selectedValue="7.7" description="selected" unit="inch" minValue="1e-05" name="PropellerDiameter" valueType="CONTINUOUS"/>
+        <hasDesignParameter maxValue="20.0" selectedValue="12.0" description="selected" unit="g" name="PropellerMass" valueType="CONTINUOUS"/>
       </hasComponent>
     </hasDomainModel>
     <hasDomainModel name="ControlModel" isDomainModelOfDomain="//@hasEngineeringDomain.3">
