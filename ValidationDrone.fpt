@@ -27,8 +27,8 @@
     <hasProperty name="ProvideEnoughTorque" isPropertyOfDomain="//@hasEngineeringDomain.1" state="TRUE"/>
     <hasProperty name="RotateFastEnough" isPropertyOfDomain="//@hasEngineeringDomain.1" state="FALSE"/>
     <hasProperty name="SufficientPowerSupply" isPropertyOfDomain="//@hasEngineeringDomain.1" state="TRUE"/>
-    <hasProperty name="GoodPropellers" isPropertyOfDomain="//@hasEngineeringDomain.2" state="TRUE"/>
-    <hasProperty name="LimitedDrag" isPropertyOfDomain="//@hasEngineeringDomain.2" state="TRUE"/>
+    <hasProperty name="GoodPropellers" isPropertyOfDomain="//@hasEngineeringDomain.2" state="FALSE"/>
+    <hasProperty name="LimitedDrag" isPropertyOfDomain="//@hasEngineeringDomain.2" state="FALSE"/>
     <hasProperty name="EnoughEnergy" isPropertyOfDomain="//@hasEngineeringDomain.1" state="TRUE"/>
     <hasProperty name="SettlingTimeOK" isPropertyOfDomain="//@hasEngineeringDomain.3" state="FALSE"/>
     <hasProperty name="RiseTimeOK" isPropertyOfDomain="//@hasEngineeringDomain.3" state="TRUE"/>
