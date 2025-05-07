@@ -21,7 +21,7 @@
     <hasProperty name="SteadyStateErrorOK" state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3"/>
     <hasProperty name="CarryEnoughPayload" state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
     <hasProperty name="MinimumFlightTime" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
-    <hasProperty name="LimitedAcceleration" state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3"/>
+    <hasProperty name="LimitedAcceleration" state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3"/>
     <hasProperty name="TakeOffTimeOK" state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
     <hasProperty name="GoodThrustToWeightRatio" state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.2"/>
     <hasProperty name="BatterySoC10Percent" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
@@ -175,26 +175,26 @@
       </hasPerformanceValue>
     </hasDomainModel>
     <hasDomainModel isDomainModelOfDomain="//@hasEngineeringDomain.3" name="ControlModel">
-      <hasPerformanceValue name="RiseTime" value="8.399999999999999" unit="s">
+      <hasPerformanceValue name="RiseTime" value="7.0" unit="s">
         <evaluationFunction expression="RiseTime &lt; 12"/>
       </hasPerformanceValue>
       <hasPerformanceValue name="Damping" unit="%" goal="MAXIMIZE"/>
-      <hasPerformanceValue name="SettlingTime" value="21.23" unit="s">
+      <hasPerformanceValue name="SettlingTime" value="10.92" unit="s">
         <evaluationFunction expression="SettlingTime &lt;= 12"/>
       </hasPerformanceValue>
-      <hasPerformanceValue name="MaxOvershoot" value="-0.021227222735664242" unit="m">
+      <hasPerformanceValue name="MaxOvershoot" value="0.016583351969531535" unit="m">
         <evaluationFunction expression="MaxOvershoot &lt;= 1"/>
       </hasPerformanceValue>
-      <hasPerformanceValue name="SteadyStateError" value="0.021227222735664242" unit="m">
+      <hasPerformanceValue name="SteadyStateError" value="-0.00033427923058404474" unit="m">
         <evaluationFunction expression="And(-0.2 &lt;= SteadyStateError, SteadyStateError &lt;= 0.2)"/>
       </hasPerformanceValue>
-      <hasPerformanceValue name="MaxExperiencedAcceleration" value="1.10668688740201" unit="m/s^2">
+      <hasPerformanceValue name="MaxExperiencedAcceleration" value="1.5662362139150052" unit="m/s^2">
         <evaluationFunction expression="And(-2.0 &lt;= MaxExperiencedAcceleration, MaxExperiencedAcceleration &lt;= 2.0)"/>
       </hasPerformanceValue>
       <hasComponent name="Controller">
-        <hasDesignParameter valueType="CONTINUOUS" stepSize="0.001" selectedValue="221.0" maxValue="10000.0" minValue="0.001" description="selected" initialValue="0.001" name="Kd"/>
-        <hasDesignParameter valueType="CONTINUOUS" stepSize="0.001" selectedValue="279.0" maxValue="10000.0" minValue="0.001" description="selected" initialValue="0.001" name="Kp"/>
-        <hasDesignParameter valueType="CONTINUOUS" stepSize="0.001" selectedValue="53.0" maxValue="10000.0" minValue="0.001" description="selected" initialValue="0.001" name="Ki"/>
+        <hasDesignParameter valueType="CONTINUOUS" stepSize="0.001" selectedValue="1000.0" maxValue="10000.0" minValue="0.001" description="selected" initialValue="0.001" name="Kd"/>
+        <hasDesignParameter valueType="CONTINUOUS" stepSize="0.001" selectedValue="1000.0" maxValue="10000.0" minValue="0.001" description="selected" initialValue="0.001" name="Kp"/>
+        <hasDesignParameter valueType="CONTINUOUS" stepSize="0.001" selectedValue="200.0" maxValue="10000.0" minValue="0.001" description="selected" initialValue="0.001" name="Ki"/>
         <hasDesignParameter name="UpperLimit" description="selected" selectedValue="15000.0"/>
         <hasDesignParameter name="LowerLimit" description="selected"/>
       </hasComponent>
