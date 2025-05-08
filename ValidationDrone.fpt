@@ -112,27 +112,27 @@
       </hasComponent>
     </hasDomainModel>
     <hasDomainModel isDomainModelOfDomain="//@hasEngineeringDomain.3" name="ControlModel">
-      <hasPerformanceValue value="5.95" name="RiseTime" unit="s">
+      <hasPerformanceValue value="5.96" name="RiseTime" unit="s">
         <evaluationFunction expression="RiseTime &lt; 12"/>
       </hasPerformanceValue>
       <hasPerformanceValue goal="MAXIMIZE" name="Damping" unit="%"/>
-      <hasPerformanceValue value="11.72" name="SettlingTime" unit="s">
+      <hasPerformanceValue value="11.73" name="SettlingTime" unit="s">
         <evaluationFunction expression="SettlingTime &lt;= 12"/>
       </hasPerformanceValue>
-      <hasPerformanceValue value="-0.0001836249401119261" name="MaxOvershoot" unit="m">
+      <hasPerformanceValue value="-0.0001841384947027791" name="MaxOvershoot" unit="m">
         <evaluationFunction expression="MaxOvershoot &lt;= 1"/>
       </hasPerformanceValue>
-      <hasPerformanceValue value="0.0001836249401119261" name="SteadyStateError" unit="m">
+      <hasPerformanceValue value="0.0001841384947027791" name="SteadyStateError" unit="m">
         <evaluationFunction expression="And(-0.2 &lt;= SteadyStateError, SteadyStateError &lt;= 0.2)"/>
       </hasPerformanceValue>
-      <hasPerformanceValue value="1.8800739664119863" name="MaxExperiencedAcceleration" unit="m/s^2">
+      <hasPerformanceValue value="1.854022276144028" name="MaxExperiencedAcceleration" unit="m/s^2">
         <evaluationFunction expression="And(-2.0 &lt;= MaxExperiencedAcceleration, MaxExperiencedAcceleration &lt;= 2.0)"/>
       </hasPerformanceValue>
       <hasComponent name="Controller">
         <hasDesignParameter valueType="CONTINUOUS" name="Kd" stepSize="0.001" maxValue="10000.0" selectedValue="400.0" description="selected" minValue="0.001" initialValue="0.001"/>
         <hasDesignParameter valueType="CONTINUOUS" name="Kp" stepSize="0.001" maxValue="10000.0" selectedValue="650.0" description="selected" minValue="0.001" initialValue="0.001"/>
         <hasDesignParameter valueType="CONTINUOUS" name="Ki" stepSize="0.001" maxValue="10000.0" selectedValue="170.0" description="selected" minValue="0.001" initialValue="0.001"/>
-        <hasDesignParameter selectedValue="8400.0" description="selected" name="UpperLimit"/>
+        <hasDesignParameter selectedValue="9000.0" description="selected" name="UpperLimit"/>
         <hasDesignParameter selectedValue="5500.0" description="selected" name="LowerLimit"/>
       </hasComponent>
     </hasDomainModel>
