@@ -1,35 +1,94 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<FPT:DesignProblem xmlns:xmi="http://www.omg.org/XMI" xmlns:FPT="http://www.example.org/FPT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" modelVersion="v1" name="Validation Drone CDKM" project="FlexMoSys" description="This is the CDKM created for the validation of the CDKM on a drone. The goal of the drone is to hover at a certain height." author="" xmi:version="2.0">
+<FPT:DesignProblem xmlns:xmi="http://www.omg.org/XMI" xmlns:FPT="http://www.example.org/FPT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" project="FlexMoSys" author="" modelVersion="v1" name="Validation Drone CDKM" description="This is the CDKM created for the validation of the CDKM on a drone. The goal of the drone is to hover at a certain height." xmi:version="2.0">
   <hasDependencyModel>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.1/@hasDesignParameter.1" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.1"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.2"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.0"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.0" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.1"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.0" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.2"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.0" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.0"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.0" source="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.0"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.2/@hasComponent.0/@hasDesignParameter.0" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.2/@hasComponent.0/@hasDesignParameter.1" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.0/@hasDesignParameter.0" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.1/@hasDesignParameter.3" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.2/@hasComponent.0/@hasDesignParameter.2" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.1/@hasDesignParameter.2" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.0/@hasDesignParameter.3" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.0" source="//@hasDependencyModel/@hasDomainModel.2/@hasComponent.0/@hasDesignParameter.0"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.1"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.3" source="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.0" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.3" source="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.2"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.0" source="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.3"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.1"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.2"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.0"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.0" source="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.3"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.3"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.3"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.3" source="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.2" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.3" source="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.1"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.0" source="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.1" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.4" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.0/@hasDesignParameter.1" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.0" source="//@hasDependencyModel/@hasDomainModel.2/@hasComponent.0/@hasDesignParameter.1" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.5" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.1/@hasDesignParameter.0"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.5" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.0/@hasDesignParameter.2" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.5" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.0" source="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.5" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.0" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.3"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.3"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.0" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.4"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.4"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.3"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.4"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.1/@hasDesignParameter.4" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.1/@hasDesignParameter.4" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.3" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.1"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.3" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.2"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.3" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.0"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.3" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.3"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.3" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.4"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.0/@hasComponent.0/@hasDesignParameter.1" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.4" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.1"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.4" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.2"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.4" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.0"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.5" source="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.0"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.5" source="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.6" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.0/@hasDesignParameter.1" sign="Positive"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.6" source="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.0"/>
+    <hasInfluenceRelation xsi:type="FPT:L1" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.0" source="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1"/>
+    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.3" source="//@hasDependencyModel/@hasDomainModel.0/@hasComponent.0/@hasDesignParameter.0" sign="Positive"/>
     <hasDomainModel isDomainModelOfDomain="//@hasEngineeringDomain.0" name="SystemModel">
       <hasComponent name="Body">
-        <hasDesignParameter maxValue="500.0" description="" name="PayloadMass" unit="g" valueType="CONTINUOUS"/>
-        <hasDesignParameter selectedValue="300.0" maxValue="300.0" minValue="300.0" description="" name="BodyMass" initialValue="300.0"/>
+        <hasDesignParameter description="" name="PayloadMass" unit="g" valueType="CONTINUOUS" maxValue="500.0"/>
+        <hasDesignParameter description="" name="BodyMass" minValue="300.0" initialValue="300.0" selectedValue="300.0" maxValue="300.0"/>
       </hasComponent>
     </hasDomainModel>
-    <hasDomainModel isDomainModelOfDomain="//@hasEngineeringDomain.1" description="" name="ElectricalModel">
+    <hasDomainModel name="ElectricalModel" isDomainModelOfDomain="//@hasEngineeringDomain.1" description="">
       <hasComponent name="Battery">
-        <hasDesignParameter selectedValue="14.8" maxValue="16.8" minValue="6.0" description="selected" name="BatteryVoltage" initialValue="6.0" unit="V" valueType="CONTINUOUS"/>
-        <hasDesignParameter selectedValue="2800.0" maxValue="20000.0" description="selected" name="BatteryCapacity" unit="mAh" valueType="CONTINUOUS"/>
-        <hasDesignParameter selectedValue="84.0" maxValue="400.0" description="selected" name="BatteryMaxCurrent" unit="A" valueType="CONTINUOUS"/>
-        <hasDesignParameter selectedValue="300.0" maxValue="2000.0" description="selected" name="BatteryMass" unit="g" valueType="CONTINUOUS"/>
+        <hasDesignParameter description="selected" name="BatteryVoltage" minValue="6.0" initialValue="6.0" unit="V" selectedValue="14.8" valueType="CONTINUOUS" maxValue="16.8"/>
+        <hasDesignParameter description="selected" name="BatteryCapacity" unit="mAh" selectedValue="850.0" valueType="CONTINUOUS" maxValue="20000.0"/>
+        <hasDesignParameter description="selected" name="BatteryMaxCurrent" unit="A" selectedValue="59.5" valueType="CONTINUOUS" maxValue="400.0"/>
+        <hasDesignParameter description="selected" name="BatteryMass" unit="g" selectedValue="106.0" valueType="CONTINUOUS" maxValue="2000.0"/>
       </hasComponent>
       <hasComponent name="Motor">
-        <hasDesignParameter selectedValue="36.0" maxValue="40.0" description="selected" name="MotorMaxCurrent" unit="A"/>
-        <hasDesignParameter selectedValue="580.0" maxValue="3000.0" description="selected" name="MotorKv" unit="rpm/V" valueType="CONTINUOUS"/>
-        <hasDesignParameter selectedValue="102.0" maxValue="150.0" description="selected" name="MotorMass" unit="g" valueType="CONTINUOUS"/>
-        <hasDesignParameter selectedValue="0.01646" maxValue="0.00318" description="selected" name="MotorKt" unit="Nm/A"/>
-        <hasDesignParameter selectedValue="296.0" maxValue="700.0" description="selected" name="MotorMaxPower" unit="W" valueType="CONTINUOUS"/>
+        <hasDesignParameter description="selected" name="MotorMaxCurrent" unit="A" selectedValue="36.0" maxValue="40.0"/>
+        <hasDesignParameter description="selected" name="MotorKv" unit="rpm/V" selectedValue="580.0" valueType="CONTINUOUS" maxValue="3000.0"/>
+        <hasDesignParameter description="selected" name="MotorMass" unit="g" selectedValue="102.0" valueType="CONTINUOUS" maxValue="150.0"/>
+        <hasDesignParameter description="selected" name="MotorKt" unit="Nm/A" selectedValue="0.01646" maxValue="0.00318"/>
+        <hasDesignParameter description="selected" name="MotorMaxPower" unit="W" selectedValue="296.0" valueType="CONTINUOUS" maxValue="700.0"/>
       </hasComponent>
       <hasPerformanceValue name="TotalPowerConsumption" unit="W"/>
-      <hasPerformanceValue description="Theoretical maximum motor RPM" goal="MAXIMIZE" name="MaxMotorRPM" value="8583.906390075908" unit="rpm">
+      <hasPerformanceValue description="Theoretical maximum motor RPM" name="MaxMotorRPM" value="8583.946830616129" unit="rpm" goal="MAXIMIZE">
         <evaluationFunction expression="And(10000.0 &lt;= MaxMotorRPM, MaxMotorRPM &lt;= 15000.0)"/>
       </hasPerformanceValue>
-      <hasPerformanceValue description="Theoretical maximum motor torque" goal="MAXIMIZE" name="MaxMotorTorque" value="0.09011286644213913" unit="Nm"/>
-      <hasPerformanceValue goal="MAXIMIZE" name="TorqueRatio" value="1.0000339722684033">
+      <hasPerformanceValue description="Theoretical maximum motor torque" name="MaxMotorTorque" value="0.051653011911420334" unit="Nm" goal="MAXIMIZE"/>
+      <hasPerformanceValue goal="MAXIMIZE" name="TorqueRatio" value="0.9999964702916286">
         <evaluationFunction expression="TorqueRatio &gt;= 0.99"/>
       </hasPerformanceValue>
-      <hasPerformanceValue description="The expected SoC from the battery. This is obtained after giving a throttle of 50% for the duration of the test." goal="MAXIMIZE" name="ExpectedFinalSoC" value="61.929304486920756" unit="%">
+      <hasPerformanceValue description="The expected SoC from the battery. This is obtained after giving a throttle of 50% for the duration of the test." name="ExpectedFinalSoC" value="27.520512886635768" unit="%" goal="MAXIMIZE">
         <evaluationFunction expression="ExpectedFinalSoC &gt; 10.0"/>
       </hasPerformanceValue>
       <hasPerformanceValue goal="MAXIMIZE" name="MaxMotorCurrentIn" unit="A"/>
@@ -37,13 +96,13 @@
         <evaluationFunction expression="FinalBatterySoC &gt;= 10"/>
       </hasPerformanceValue>
     </hasDomainModel>
-    <hasDomainModel isDomainModelOfDomain="//@hasEngineeringDomain.2" description="" name="MechanicalModel">
+    <hasDomainModel name="MechanicalModel" isDomainModelOfDomain="//@hasEngineeringDomain.2" description="">
       <hasComponent name="Propeller">
-        <hasDesignParameter selectedValue="4.5" maxValue="30.0" description="selected" name="PropellerPitch" unit="degrees" valueType="CONTINUOUS"/>
-        <hasDesignParameter selectedValue="10.0" maxValue="15.0" minValue="1e-05" description="selected" name="PropellerDiameter" unit="inch" valueType="CONTINUOUS"/>
-        <hasDesignParameter selectedValue="12.8" maxValue="20.0" description="selected" name="PropellerMass" unit="g" valueType="CONTINUOUS"/>
+        <hasDesignParameter description="selected" name="PropellerPitch" unit="degrees" selectedValue="4.5" valueType="CONTINUOUS" maxValue="30.0"/>
+        <hasDesignParameter description="selected" name="PropellerDiameter" minValue="1e-05" unit="inch" selectedValue="10.0" valueType="CONTINUOUS" maxValue="15.0"/>
+        <hasDesignParameter description="selected" name="PropellerMass" unit="g" selectedValue="12.8" valueType="CONTINUOUS" maxValue="20.0"/>
       </hasComponent>
-      <hasPerformanceValue description="" goal="MAXIMIZE" name="MaxThrust" value="16.15679035155815" unit="N"/>
+      <hasPerformanceValue description="" name="MaxThrust" value="16.15679035155815" unit="N" goal="MAXIMIZE"/>
       <hasPerformanceValue description="" name="MaxDragTorque" value="0.051653194232132424" unit="Nm">
         <evaluationFunction expression="And(0.00001 &lt;= MaxDragTorque, MaxDragTorque &lt;= 0.25)"/>
       </hasPerformanceValue>
@@ -72,111 +131,52 @@
         <evaluationFunction expression="And(-2.0 &lt;= MaxExperiencedAcceleration, MaxExperiencedAcceleration &lt;= 2.0)"/>
       </hasPerformanceValue>
       <hasComponent name="Controller">
-        <hasDesignParameter selectedValue="600.0" stepSize="0.001" maxValue="10000.0" minValue="0.001" description="selected" name="Kd" initialValue="0.001" valueType="CONTINUOUS"/>
-        <hasDesignParameter selectedValue="600.0" stepSize="0.001" maxValue="10000.0" minValue="0.001" description="selected" name="Kp" initialValue="0.001" valueType="CONTINUOUS"/>
-        <hasDesignParameter selectedValue="225.0" stepSize="0.001" maxValue="10000.0" minValue="0.001" description="selected" name="Ki" initialValue="0.001" valueType="CONTINUOUS"/>
-        <hasDesignParameter name="UpperLimit" selectedValue="7500.0" description="selected"/>
-        <hasDesignParameter name="LowerLimit" selectedValue="5550.0" description="selected"/>
+        <hasDesignParameter description="selected" name="Kd" minValue="0.001" initialValue="0.001" stepSize="0.001" selectedValue="600.0" valueType="CONTINUOUS" maxValue="10000.0"/>
+        <hasDesignParameter description="selected" name="Kp" minValue="0.001" initialValue="0.001" stepSize="0.001" selectedValue="600.0" valueType="CONTINUOUS" maxValue="10000.0"/>
+        <hasDesignParameter description="selected" name="Ki" minValue="0.001" initialValue="0.001" stepSize="0.001" selectedValue="225.0" valueType="CONTINUOUS" maxValue="10000.0"/>
+        <hasDesignParameter description="selected" name="UpperLimit" selectedValue="7500.0"/>
+        <hasDesignParameter description="selected" name="LowerLimit" selectedValue="5550.0"/>
       </hasComponent>
     </hasDomainModel>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.1/@hasDesignParameter.1" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.2" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.0" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.0"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.2" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.0"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.0" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.0"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.0" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.0"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.2/@hasComponent.0/@hasDesignParameter.0" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.2/@hasComponent.0/@hasDesignParameter.1" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.0/@hasDesignParameter.0" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.1/@hasDesignParameter.3" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.2/@hasComponent.0/@hasDesignParameter.2" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.1/@hasDesignParameter.2" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.0/@hasDesignParameter.3" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.2/@hasComponent.0/@hasDesignParameter.0" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.0"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.1" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.1"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.3" source="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.0" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" source="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.2" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.3"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.3" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.0"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.2"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.2" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.2"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.0" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.2"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.2"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.3" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.0"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.3" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.3" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.2"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.3" source="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.2" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" source="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.1" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.3"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.0" source="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.1" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.4" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.0/@hasDesignParameter.1" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.0" source="//@hasDependencyModel/@hasDomainModel.2/@hasComponent.0/@hasDesignParameter.1" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.1/@hasDesignParameter.0" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.5"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.5" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.0/@hasDesignParameter.2" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.5" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.0" source="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.5" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.3" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.0"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.3" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.2"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.4" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.0"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.4" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.2"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.3" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.4" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.1/@hasDesignParameter.4" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.1" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.1/@hasDesignParameter.4" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.3"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.2" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.3"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.0" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.3"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.3" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.3"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.4" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.3"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.2" source="//@hasDependencyModel/@hasDomainModel.0/@hasComponent.0/@hasDesignParameter.1" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.4"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.2" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.4"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasComponent.0/@hasDesignParameter.0" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.4"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" source="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.0" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.5"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1" destination="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.5"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.6" source="//@hasDependencyModel/@hasDomainModel.1/@hasComponent.0/@hasDesignParameter.1" sign="Positive"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" source="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.0" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.6"/>
-    <hasInfluenceRelation xsi:type="FPT:L1" source="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.1" destination="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.0"/>
-    <hasInfluenceRelation xsi:type="FPT:L1_Signed" destination="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.3" source="//@hasDependencyModel/@hasDomainModel.0/@hasComponent.0/@hasDesignParameter.0" sign="Positive"/>
   </hasDependencyModel>
-  <hasSatisfies performanceValue="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.1" property="//@hasPropertyOntology/@hasProperty.12"/>
-  <hasSatisfies performanceValue="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.4" property="//@hasPropertyOntology/@hasProperty.16"/>
-  <hasSatisfies performanceValue="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.3" property="//@hasPropertyOntology/@hasProperty.11"/>
-  <hasSatisfies performanceValue="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.6" property="//@hasPropertyOntology/@hasProperty.7"/>
-  <hasSatisfies performanceValue="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.1" property="//@hasPropertyOntology/@hasProperty.15"/>
-  <hasSatisfies performanceValue="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.2" property="//@hasPropertyOntology/@hasProperty.9"/>
-  <hasSatisfies performanceValue="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.3" property="//@hasPropertyOntology/@hasProperty.6"/>
-  <hasSatisfies performanceValue="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.4" property="//@hasPropertyOntology/@hasProperty.1"/>
-  <hasSatisfies performanceValue="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.0" property="//@hasPropertyOntology/@hasProperty.18"/>
-  <hasSatisfies performanceValue="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.3" property="//@hasPropertyOntology/@hasProperty.20"/>
-  <hasSatisfies performanceValue="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.2" property="//@hasPropertyOntology/@hasProperty.17"/>
-  <hasSatisfies performanceValue="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.5" property="//@hasPropertyOntology/@hasProperty.4"/>
-  <hasEngineeringDomain domainName="SystemDomain" containsProperty="//@hasPropertyOntology/@hasProperty.0 //@hasPropertyOntology/@hasProperty.1 //@hasPropertyOntology/@hasProperty.2 //@hasPropertyOntology/@hasProperty.3 //@hasPropertyOntology/@hasProperty.4 //@hasPropertyOntology/@hasProperty.5 //@hasPropertyOntology/@hasProperty.19" containsDomainModel="//@hasDependencyModel/@hasDomainModel.0"/>
-  <hasEngineeringDomain domainName="ElectricalDomain" containsProperty="//@hasPropertyOntology/@hasProperty.7 //@hasPropertyOntology/@hasProperty.8 //@hasPropertyOntology/@hasProperty.10 //@hasPropertyOntology/@hasProperty.11 //@hasPropertyOntology/@hasProperty.12 //@hasPropertyOntology/@hasProperty.13 //@hasPropertyOntology/@hasProperty.16" containsDomainModel="//@hasDependencyModel/@hasDomainModel.1"/>
-  <hasEngineeringDomain domainName="MechanicalDomain" containsProperty="//@hasPropertyOntology/@hasProperty.6 //@hasPropertyOntology/@hasProperty.8 //@hasPropertyOntology/@hasProperty.9 //@hasPropertyOntology/@hasProperty.14 //@hasPropertyOntology/@hasProperty.15" containsDomainModel="//@hasDependencyModel/@hasDomainModel.2"/>
-  <hasEngineeringDomain domainName="ControlDomain" containsProperty="//@hasPropertyOntology/@hasProperty.1 //@hasPropertyOntology/@hasProperty.4 //@hasPropertyOntology/@hasProperty.17 //@hasPropertyOntology/@hasProperty.18 //@hasPropertyOntology/@hasProperty.20" containsDomainModel="//@hasDependencyModel/@hasDomainModel.3"/>
+  <hasEngineeringDomain containsProperty="//@hasPropertyOntology/@hasProperty.0 //@hasPropertyOntology/@hasProperty.1 //@hasPropertyOntology/@hasProperty.2 //@hasPropertyOntology/@hasProperty.3 //@hasPropertyOntology/@hasProperty.4 //@hasPropertyOntology/@hasProperty.5 //@hasPropertyOntology/@hasProperty.19" domainName="SystemDomain" containsDomainModel="//@hasDependencyModel/@hasDomainModel.0"/>
+  <hasEngineeringDomain containsProperty="//@hasPropertyOntology/@hasProperty.7 //@hasPropertyOntology/@hasProperty.8 //@hasPropertyOntology/@hasProperty.10 //@hasPropertyOntology/@hasProperty.11 //@hasPropertyOntology/@hasProperty.12 //@hasPropertyOntology/@hasProperty.13 //@hasPropertyOntology/@hasProperty.16" domainName="ElectricalDomain" containsDomainModel="//@hasDependencyModel/@hasDomainModel.1"/>
+  <hasEngineeringDomain containsProperty="//@hasPropertyOntology/@hasProperty.6 //@hasPropertyOntology/@hasProperty.8 //@hasPropertyOntology/@hasProperty.9 //@hasPropertyOntology/@hasProperty.14 //@hasPropertyOntology/@hasProperty.15" domainName="MechanicalDomain" containsDomainModel="//@hasDependencyModel/@hasDomainModel.2"/>
+  <hasEngineeringDomain containsProperty="//@hasPropertyOntology/@hasProperty.1 //@hasPropertyOntology/@hasProperty.4 //@hasPropertyOntology/@hasProperty.17 //@hasPropertyOntology/@hasProperty.18 //@hasPropertyOntology/@hasProperty.20" domainName="ControlDomain" containsDomainModel="//@hasDependencyModel/@hasDomainModel.3"/>
+  <hasSatisfies property="//@hasPropertyOntology/@hasProperty.12" performanceValue="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.1"/>
+  <hasSatisfies property="//@hasPropertyOntology/@hasProperty.16" performanceValue="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.4"/>
+  <hasSatisfies property="//@hasPropertyOntology/@hasProperty.11" performanceValue="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.3"/>
+  <hasSatisfies property="//@hasPropertyOntology/@hasProperty.7" performanceValue="//@hasDependencyModel/@hasDomainModel.1/@hasPerformanceValue.6"/>
+  <hasSatisfies property="//@hasPropertyOntology/@hasProperty.15" performanceValue="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.1"/>
+  <hasSatisfies property="//@hasPropertyOntology/@hasProperty.9" performanceValue="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.2"/>
+  <hasSatisfies property="//@hasPropertyOntology/@hasProperty.6" performanceValue="//@hasDependencyModel/@hasDomainModel.2/@hasPerformanceValue.3"/>
+  <hasSatisfies property="//@hasPropertyOntology/@hasProperty.1" performanceValue="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.4"/>
+  <hasSatisfies property="//@hasPropertyOntology/@hasProperty.18" performanceValue="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.0"/>
+  <hasSatisfies property="//@hasPropertyOntology/@hasProperty.20" performanceValue="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.3"/>
+  <hasSatisfies property="//@hasPropertyOntology/@hasProperty.17" performanceValue="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.2"/>
+  <hasSatisfies property="//@hasPropertyOntology/@hasProperty.4" performanceValue="//@hasDependencyModel/@hasDomainModel.3/@hasPerformanceValue.5"/>
   <hasPropertyOntology description="">
-    <hasProperty state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.0" name="ValidSystem"/>
-    <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3" name="SteadyStateErrorOK"/>
-    <hasProperty state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.0" name="CarryEnoughPayload"/>
-    <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.0" name="MinimumFlightTime"/>
-    <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3" name="LimitedAcceleration"/>
-    <hasProperty state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.0" name="TakeOffTimeOK"/>
-    <hasProperty state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.2" name="GoodThrustToWeightRatio"/>
-    <hasProperty isPropertyOfDomain="//@hasEngineeringDomain.1" name="BatterySoC10Percent"/>
-    <hasProperty state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.1 //@hasEngineeringDomain.2" name="EnoughThrust"/>
-    <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.2" name="LimitedMass"/>
-    <hasProperty state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.1" name="PowerfulMotors"/>
-    <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.1" name="ProvideEnoughTorque"/>
-    <hasProperty state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.1" name="RotateFastEnough"/>
-    <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.1" name="SufficientPowerSupply"/>
-    <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.2" name="GoodPropellers"/>
-    <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.2" name="LimitedDrag"/>
-    <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.1" name="EnoughEnergy"/>
-    <hasProperty state="FALSE" isPropertyOfDomain="//@hasEngineeringDomain.3" name="SettlingTimeOK"/>
-    <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.3" name="RiseTimeOK"/>
-    <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.0" name="HeightLimit"/>
-    <hasProperty state="TRUE" isPropertyOfDomain="//@hasEngineeringDomain.3" name="MaxOvershootOK"/>
+    <hasProperty name="ValidSystem" isPropertyOfDomain="//@hasEngineeringDomain.0" state="FALSE"/>
+    <hasProperty name="SteadyStateErrorOK" isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3" state="TRUE"/>
+    <hasProperty name="CarryEnoughPayload" isPropertyOfDomain="//@hasEngineeringDomain.0" state="FALSE"/>
+    <hasProperty name="MinimumFlightTime" isPropertyOfDomain="//@hasEngineeringDomain.0"/>
+    <hasProperty name="LimitedAcceleration" isPropertyOfDomain="//@hasEngineeringDomain.0 //@hasEngineeringDomain.3" state="TRUE"/>
+    <hasProperty name="TakeOffTimeOK" isPropertyOfDomain="//@hasEngineeringDomain.0" state="FALSE"/>
+    <hasProperty name="GoodThrustToWeightRatio" isPropertyOfDomain="//@hasEngineeringDomain.2" state="FALSE"/>
+    <hasProperty name="BatterySoC10Percent" isPropertyOfDomain="//@hasEngineeringDomain.1"/>
+    <hasProperty name="EnoughThrust" isPropertyOfDomain="//@hasEngineeringDomain.1 //@hasEngineeringDomain.2" state="FALSE"/>
+    <hasProperty name="LimitedMass" isPropertyOfDomain="//@hasEngineeringDomain.2" state="TRUE"/>
+    <hasProperty name="PowerfulMotors" isPropertyOfDomain="//@hasEngineeringDomain.1" state="FALSE"/>
+    <hasProperty name="ProvideEnoughTorque" isPropertyOfDomain="//@hasEngineeringDomain.1" state="TRUE"/>
+    <hasProperty name="RotateFastEnough" isPropertyOfDomain="//@hasEngineeringDomain.1" state="FALSE"/>
+    <hasProperty name="SufficientPowerSupply" isPropertyOfDomain="//@hasEngineeringDomain.1" state="TRUE"/>
+    <hasProperty name="GoodPropellers" isPropertyOfDomain="//@hasEngineeringDomain.2" state="TRUE"/>
+    <hasProperty name="LimitedDrag" isPropertyOfDomain="//@hasEngineeringDomain.2" state="TRUE"/>
+    <hasProperty name="EnoughEnergy" isPropertyOfDomain="//@hasEngineeringDomain.1" state="TRUE"/>
+    <hasProperty name="SettlingTimeOK" isPropertyOfDomain="//@hasEngineeringDomain.3" state="FALSE"/>
+    <hasProperty name="RiseTimeOK" isPropertyOfDomain="//@hasEngineeringDomain.3" state="TRUE"/>
+    <hasProperty name="HeightLimit" isPropertyOfDomain="//@hasEngineeringDomain.0" state="TRUE"/>
+    <hasProperty name="MaxOvershootOK" isPropertyOfDomain="//@hasEngineeringDomain.3" state="TRUE"/>
     <hasRequires destination="//@hasPropertyOntology/@hasProperty.1" source="//@hasPropertyOntology/@hasProperty.0"/>
     <hasRequires destination="//@hasPropertyOntology/@hasProperty.5" source="//@hasPropertyOntology/@hasProperty.0"/>
     <hasRequires destination="//@hasPropertyOntology/@hasProperty.3" source="//@hasPropertyOntology/@hasProperty.0"/>
